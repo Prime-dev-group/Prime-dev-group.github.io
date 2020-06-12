@@ -15,8 +15,16 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script type="text/javascript" src="tips.json"></script>
+  <script>
+function showtips(){
+  document.getElementById('tips').innerHTML=JSON.parse(JSON.stringify(tips))[0][Math.floor(Math.random() * 4)];
+  console.log(JSON.parse(JSON.stringify(tips))[0]);
+}
+  </script>
+
 </head>
-<body>
+<body onload="showtips();">
   <div class="container">
     <div class="heading">
       <h1 class="title">2048</h1>
@@ -76,9 +84,9 @@
       <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
     </p>
     <hr>
-
+    <p id="tips"></p>
     <hr>
-  
+
   </div>
 
   <script src="js/bind_polyfill.js"></script>
