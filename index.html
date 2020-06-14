@@ -21,6 +21,8 @@ function showtips(){
   document.getElementById('tips').innerHTML=JSON.parse(JSON.stringify(tips))[0][Math.floor(Math.random() * 4)];
   console.log(JSON.parse(JSON.stringify(tips))[0]);
 }
+
+
   </script>
 
 </head>
@@ -36,7 +38,7 @@ function showtips(){
 
     <div class="above-game">
       <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
+      <a class="restart-button" >New Game</a>
     </div>
 
     <div class="game-container">
@@ -81,8 +83,13 @@ function showtips(){
     </div>
 
     <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+
+      <!-- <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+       -->
+      <a class="how-button" href="./how.html">How to Play</a>
+      <a class="tips-button" href="./tips.html">Tips and Tricks</a>
     </p>
+    <br>
     <hr>
     <p id="tips"></p>
     <hr>
