@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatibility Matrix - Astromage</title>
+    <meta name="description"
+        content="Explore zodiac compatibility with our interactive matrix. Check love, friendship, and work matches.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="compatibility-matrix.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <a href="index.html" style="text-decoration: none;">
+                <h1 class="title">Astromage</h1>
+            </a>
+            <p class="subtitle">Compatibility Matrix</p>
+        </header>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" data-type="love">Love ❤️</button>
+            <button class="filter-btn" data-type="friendship">Friendship 🤝</button>
+            <button class="filter-btn" data-type="work">Work 💼</button>
+        </div>
+
+        <div class="matrix-container">
+            <div id="compatibility-grid" class="matrix-grid">
+                <!-- Grid will be populated by JS -->
+            </div>
+        </div>
+
+        <div id="details-panel" class="details-panel glass-panel">
+            <h3 class="details-title" id="details-title">Select a pair</h3>
+            <div class="details-score" id="details-score">--%</div>
+            <p class="details-desc" id="details-desc">Click on any cell in the grid to see detailed compatibility info.
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link"
+            style="margin-top: 2rem; color: var(--text-secondary); text-decoration: none; display: inline-block; padding: 1rem;">
+            ← Back to Home
+        </a>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="compatibility_data.js"></script>
+    <script src="compatibility-matrix.js"></script>
+    <script src="script.js"></script> <!-- Reusing main script for particles -->
+</body>
+
+</html>

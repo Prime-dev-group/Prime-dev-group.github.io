@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Timeline - Astromage</title>
+    <meta name="description" content="Track your relationship's astrological milestones and anniversaries.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="relationship-timeline.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <a href="index.html" style="text-decoration: none;">
+                <h1 class="title">Astromage</h1>
+            </a>
+            <p class="subtitle">Relationship Timeline</p>
+        </header>
+
+        <div class="timeline-container">
+            <!-- Input Area -->
+            <div class="input-area glass-panel">
+                <div class="date-input-group">
+                    <label class="input-label" for="start-date">Relationship Start Date</label>
+                    <input type="date" id="start-date" class="date-input">
+                </div>
+                <button id="generate-btn" class="generate-btn">Generate Timeline</button>
+            </div>
+
+            <!-- Stats Dashboard -->
+            <div id="stats-dashboard" class="stats-dashboard glass-panel hidden">
+                <h2 class="stats-title">Cosmic Stats 🌌</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-days">0</div>
+                        <div class="stat-label">Days Together</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-moons">0</div>
+                        <div class="stat-label">Full Moons Shared</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-seasons">0</div>
+                        <div class="stat-label">Zodiac Seasons</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-retrogrades">0</div>
+                        <div class="stat-label">Retrogrades Survived</div>
+                    </div>
+                </div>
+                <button id="share-stats-btn" class="share-stats-btn">Share Stats 📤</button>
+            </div>
+
+            <!-- Timeline Display -->
+            <div id="timeline" class="timeline">
+                <!-- Milestones will be populated by JS -->
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link"
+            style="margin-top: 3rem; color: var(--text-secondary); text-decoration: none; display: inline-block; padding: 1rem;">
+            ← Back to Home
+        </a>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="relationship-timeline.js"></script>
+    <script src="script.js"></script> <!-- Reusing main script for particles -->
+    <script src="theme.js"></script>
+</body>
+
+</html>

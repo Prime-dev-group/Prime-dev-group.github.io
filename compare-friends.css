@@ -1,0 +1,241 @@
+/* Compare with Friends Styles */
+
+.comparison-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Selection Area */
+.selection-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.select-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.select-label {
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.zodiac-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    appearance: none;
+    /* Remove default arrow */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffd700%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.8rem;
+}
+
+.zodiac-select:hover,
+.zodiac-select:focus {
+    border-color: var(--accent-gold);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.compare-btn {
+    background: linear-gradient(135deg, var(--accent-purple), #ff6b9d);
+    border: none;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+    margin-top: 1.5rem;
+    /* Align with inputs */
+}
+
+.compare-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(157, 78, 221, 0.6);
+}
+
+.compare-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Results Area */
+.results-area {
+    display: none;
+    /* Hidden by default */
+    animation: fadeInUp 0.5s ease;
+}
+
+.results-area.visible {
+    display: block;
+}
+
+/* Friendship Score */
+.friendship-score-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--accent-gold);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.score-title {
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.score-value {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #4ade80, var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.score-bar-container {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.score-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, var(--accent-gold));
+    width: 0%;
+    /* Animate to value */
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 5px;
+}
+
+.score-text {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    font-style: italic;
+}
+
+/* Side-by-Side Horoscopes */
+.horoscopes-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.horoscope-card {
+    flex: 1;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.horoscope-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.sign-icon {
+    font-size: 2.5rem;
+}
+
+.sign-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.horoscope-text {
+    color: #d0d0d0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Combined Reading */
+.combined-reading-card {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(255, 107, 157, 0.1));
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.combined-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+}
+
+.combined-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .horoscopes-container {
+        flex-direction: column;
+    }
+
+    .selection-area {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .compare-btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .zodiac-select {
+        width: 100%;
+    }
+
+    .select-group {
+        width: 100%;
+    }
+}

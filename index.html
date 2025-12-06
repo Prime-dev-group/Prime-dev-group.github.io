@@ -1,120 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166663465-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astromage</title>
+    <meta name="description" content="Discover your daily cosmic guidance with Astromage.">
 
-  gtag('config', 'UA-166663465-2');
-</script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 
-  <meta charset="utf-8">
-  <title>2048</title>
-
-  <link href="style/main.css" rel="stylesheet" type="text/css">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
-  <script type="text/javascript" src="tips.json"></script>
-  <script>
-function showtips(){
-  document.getElementById('tips').innerHTML=JSON.parse(JSON.stringify(tips))[0][Math.floor(Math.random() * 4)];
-  console.log(JSON.parse(JSON.stringify(tips))[0]);
-}
-
-
-  </script>
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
 </head>
-<body onload="showtips();">
-  <div class="container">
-    <div class="heading">
-      <h1 class="title">2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
-      </div>
-    </div>
 
-    <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button" >New Game</a>
-    </div>
+<body>
+    <div id="particles-js"></div>
 
-    <div class="game-container">
-      <div class="game-message">
-        <p></p>
-        <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
+    <main class="app-container">
+        <header class="hero">
+            <h1 class="title">Astromage</h1>
+            <p class="subtitle">Unlock the secrets of the cosmos</p>
+        </header>
+
+        <section class="zodiac-grid" id="zodiac-grid">
+            <!-- Zodiac signs will be populated by JS -->
+        </section>
+
+        <!-- Love Compatibility Calculator Link -->
+        <a href="love-calculator.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">💕</div>
+            <h2 class="calculator-link-title">Love Compatibility Calculator</h2>
+            <p class="calculator-link-subtitle">Discover your cosmic connection →</p>
+        </a>
+
+        <!-- Crush Compatibility Link -->
+        <a href="crush-compatibility.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">💘</div>
+            <h2 class="calculator-link-title">Crush Compatibility Checker</h2>
+            <p class="calculator-link-subtitle">Test your crush anonymously 🤫 →</p>
+        </a>
+
+        <!-- Birth Chart Calculator Link -->
+        <a href="birth-chart.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">✨</div>
+            <h2 class="calculator-link-title">Birth Chart Calculator</h2>
+            <p class="calculator-link-subtitle">Reveal your Sun, Moon & Rising →</p>
+        </a>
+
+        <!-- Lucky Number Generator Link -->
+        <a href="lucky-numbers.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">🍀</div>
+            <h2 class="calculator-link-title">Lucky Number Generator</h2>
+            <p class="calculator-link-subtitle">Discover your daily lucky numbers ✨ →</p>
+        </a>
+
+        <!-- Moon Phase Tracker Link -->
+        <a href="moon-phase.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">🌙</div>
+            <h2 class="calculator-link-title">Moon Phase Tracker</h2>
+            <p class="calculator-link-subtitle">Discover tonight's lunar energy 🌟 →</p>
+        </a>
+
+
+
+        <!-- Relationship Timeline Link -->
+        <a href="relationship-timeline.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">⏳</div>
+            <h2 class="calculator-link-title">Relationship Timeline</h2>
+            <p class="calculator-link-subtitle">Track your cosmic milestones 📅 →</p>
+        </a>
+
+        <!-- Biorhythm Calculator Link -->
+        <a href="biorhythm.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">📈</div>
+            <h2 class="calculator-link-title">Biorhythm Calculator</h2>
+            <p class="calculator-link-subtitle">Track your energy cycles 🌊 →</p>
+        </a>
+
+        <!-- Compatibility Matrix Link -->
+        <a href="compatibility-matrix.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">🧩</div>
+            <h2 class="calculator-link-title">Compatibility Matrix</h2>
+            <p class="calculator-link-subtitle">Explore all zodiac matches 📊 →</p>
+        </a>
+
+        <!-- Compare with Friends Link -->
+        <a href="compare-friends.html" class="calculator-link-card glass-panel">
+            <div class="calculator-icon">👯</div>
+            <h2 class="calculator-link-title">Compare with Friends</h2>
+            <p class="calculator-link-subtitle">Side-by-side horoscope check ⚡ →</p>
+        </a>
+
+        <div id="horoscope-modal" class="modal hidden">
+            <div class="modal-content glass-panel">
+                <button class="close-btn" aria-label="Close">&times;</button>
+                <div class="modal-header">
+                    <div class="sign-icon" id="modal-icon"></div>
+                    <h2 id="modal-sign-name"></h2>
+                    <p class="date-range" id="modal-date-range"></p>
+                </div>
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="forecast">Daily Forecast</button>
+                    <button class="tab-btn" data-tab="profile">Personality Profile</button>
+                    <button class="tab-btn" data-tab="yearly">Yearly Forecast 2025</button>
+                </div>
+                <div class="modal-body">
+                    <div id="tab-forecast" class="tab-content active">
+                        <p id="modal-horoscope-text"></p>
+                    </div>
+                    <div id="tab-profile" class="tab-content">
+                        <div class="profile-container">
+                            <div class="profile-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Element</span>
+                                    <span id="modal-element" class="meta-value"></span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Ruling Planet</span>
+                                    <span id="modal-planet" class="meta-value"></span>
+                                </div>
+                            </div>
+                            <div class="profile-keywords" id="modal-keywords"></div>
+                            <p id="modal-traits" class="profile-traits"></p>
+
+                            <div class="profile-section">
+                                <h4>Strengths</h4>
+                                <ul id="modal-strengths" class="trait-list"></ul>
+                            </div>
+
+                            <div class="profile-section">
+                                <h4>Weaknesses</h4>
+                                <ul id="modal-weaknesses" class="trait-list"></ul>
+                            </div>
+
+                            <div class="profile-section">
+                                <h4>Love Compatibility</h4>
+                                <p id="modal-compatibility" class="compatibility-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-yearly" class="tab-content">
+                        <div class="yearly-forecast-container">
+                            <p id="modal-yearly-text" class="yearly-text"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Container -->
+                <div class="share-container">
+                    <p class="share-title">Share your horoscope</p>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" id="share-twitter">🐦 Twitter</button>
+                        <button class="share-btn facebook" id="share-facebook">📘 Facebook</button>
+                        <button class="share-btn download" id="share-download">📥 Download</button>
+                        <button class="share-btn copy" id="share-copy">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </main>
 
-      <div class="grid-container">
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-      </div>
-
-      <div class="tile-container">
-
-      </div>
-    </div>
-
-    <p class="game-explanation">
-
-      <!-- <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
-       -->
-      <a class="how-button" href="./how.html">How to Play</a>
-      <a class="tips-button" href="./tips.html">Tips and Tricks</a>
-    </p>
-    <br>
-    <hr>
-    <p id="tips"></p>
-    <hr>
-
-  </div>
-
-  <script src="js/bind_polyfill.js"></script>
-  <script src="js/classlist_polyfill.js"></script>
-  <script src="js/animframe_polyfill.js"></script>
-  <script src="js/keyboard_input_manager.js"></script>
-  <script src="js/html_actuator.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/tile.js"></script>
-  <script src="js/local_storage_manager.js"></script>
-  <script src="js/game_manager.js"></script>
-  <script src="js/application.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="horoscope_data.js"></script>
+    <script src="share-utils.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

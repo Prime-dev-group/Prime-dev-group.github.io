@@ -1,0 +1,498 @@
+/* Moon Phase Tracker Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.app-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 0.8s ease;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Glass Panel */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Moon Display Section */
+.moon-display-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.moon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.moon {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f5f5f5 0%, #d4d4d4 100%);
+    box-shadow:
+        0 0 60px rgba(255, 255, 255, 0.3),
+        inset 0 0 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: moonGlow 3s ease-in-out infinite;
+}
+
+.moon-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a2e;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+/* Moon Info */
+.moon-info {
+    text-align: center;
+}
+
+.moon-phase-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #a8dadc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.moon-date {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.moon-details {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.moon-detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #a8dadc;
+}
+
+.moon-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.moon-energy {
+    padding: 1.5rem;
+    background: rgba(168, 218, 220, 0.1);
+    border-radius: 16px;
+    border: 1px solid rgba(168, 218, 220, 0.3);
+}
+
+.moon-energy h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: #a8dadc;
+}
+
+.moon-energy p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Zodiac Insights Section */
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.zodiac-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.zodiac-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.2rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.zodiac-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.zodiac-btn.active {
+    background: rgba(168, 218, 220, 0.3);
+    border-color: rgba(168, 218, 220, 0.6);
+    box-shadow: 0 0 25px rgba(168, 218, 220, 0.3);
+}
+
+.zodiac-btn-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.zodiac-btn-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Zodiac Insights Container */
+.zodiac-insights-container {
+    margin-top: 2rem;
+    animation: slideIn 0.5s ease;
+}
+
+.zodiac-insights-container.hidden {
+    display: none;
+}
+
+.insights-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.insight-sign-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 1s ease;
+}
+
+.insights-header h3 {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.insight-content {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.insight-section {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.insight-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #a8dadc;
+}
+
+.insight-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Share Container */
+.share-container {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-title {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.share-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes moonGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 60px rgba(255, 255, 255, 0.3),
+            inset 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 80px rgba(255, 255, 255, 0.5),
+            inset 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .moon-display-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .moon {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .glass-panel {
+        padding: 1.5rem;
+    }
+
+    .zodiac-selector {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .zodiac-btn {
+        padding: 1rem 0.5rem;
+    }
+
+    .zodiac-btn-icon {
+        font-size: 2rem;
+    }
+
+    .zodiac-btn-name {
+        font-size: 0.85rem;
+    }
+
+    .moon-phase-name {
+        font-size: 2rem;
+    }
+
+    .moon {
+        width: 180px;
+        height: 180px;
+    }
+
+    .back-btn {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .zodiac-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .moon-details {
+        gap: 1.5rem;
+    }
+
+    .moon {
+        width: 150px;
+        height: 150px;
+    }
+}

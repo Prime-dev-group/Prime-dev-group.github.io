@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number Generator - Astromage</title>
+    <meta name="description" content="Discover your daily lucky numbers based on your zodiac sign.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="lucky-numbers.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <a href="index.html" class="back-btn" aria-label="Back to Home">← Back</a>
+            <h1 class="title">🍀 Lucky Numbers</h1>
+            <p class="subtitle" id="date-display">Discover your cosmic fortune</p>
+        </header>
+
+        <section class="content-section glass-panel">
+            <h2 class="section-title">Select Your Zodiac Sign</h2>
+            <div class="zodiac-selector" id="zodiac-selector">
+                <!-- Zodiac buttons will be populated by JS -->
+            </div>
+
+            <div id="results-container" class="results-container hidden">
+                <div class="results-header">
+                    <div class="selected-sign-icon" id="selected-sign-icon"></div>
+                    <h3 id="selected-sign-name"></h3>
+                    <p class="results-date" id="results-date"></p>
+                </div>
+
+                <div class="numbers-grid">
+                    <div class="number-category">
+                        <h4>🎯 General Lucky Numbers</h4>
+                        <div class="numbers-display" id="general-numbers">
+                            <!-- Numbers populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="number-category">
+                        <h4>⚡ Power Number</h4>
+                        <div class="numbers-display power" id="power-number">
+                            <!-- Power number populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="number-category">
+                        <h4>🕐 Lucky Time</h4>
+                        <div class="lucky-time" id="lucky-time">
+                            <!-- Lucky time populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Container -->
+                <div class="share-container">
+                    <p class="share-title">Share your lucky numbers</p>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" id="share-twitter">🐦 Twitter</button>
+                        <button class="share-btn facebook" id="share-facebook">📘 Facebook</button>
+                        <button class="share-btn download" id="share-download">📥 Download</button>
+                        <button class="share-btn copy" id="share-copy">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="share-utils.js"></script>
+    <script src="lucky-numbers.js"></script>
+</body>
+
+</html>

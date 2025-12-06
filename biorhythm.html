@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biorhythm Calculator - Astromage</title>
+    <meta name="description" content="Calculate your physical, emotional, and intellectual biorhythm cycles.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="biorhythm.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <a href="index.html" class="back-btn" aria-label="Back to Home">← Back</a>
+            <h1 class="title">📈 Biorhythm Calculator</h1>
+            <p class="subtitle">Track your physical, emotional & intellectual cycles</p>
+        </header>
+
+        <section class="input-section glass-panel">
+            <h2 class="section-title">Enter Your Birth Date</h2>
+            <div class="date-input-container">
+                <input type="date" id="birth-date" class="date-input" max="2025-12-01">
+                <button id="calculate-btn" class="calculate-btn">Calculate Biorhythms</button>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <!-- Wave Visualization -->
+            <div class="visualization-section glass-panel">
+                <h2 class="section-title">Your Biorhythm Cycles</h2>
+                <p class="chart-subtitle" id="days-alive-text"></p>
+                <div class="canvas-container">
+                    <canvas id="biorhythm-canvas"></canvas>
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-color physical"></span>
+                        <span>Physical (23 days)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color emotional"></span>
+                        <span>Emotional (28 days)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color intellectual"></span>
+                        <span>Intellectual (33 days)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle Cards -->
+            <div class="cycles-grid">
+                <!-- Physical Cycle -->
+                <div class="cycle-card glass-panel physical-card">
+                    <div class="cycle-header">
+                        <h3>💪 Physical</h3>
+                        <span class="cycle-percentage" id="physical-percentage">0%</span>
+                    </div>
+                    <div class="cycle-bar">
+                        <div class="cycle-fill physical-fill" id="physical-fill"></div>
+                    </div>
+                    <div class="cycle-state" id="physical-state">Calculating...</div>
+                    <p class="cycle-description" id="physical-description"></p>
+                </div>
+
+                <!-- Emotional Cycle -->
+                <div class="cycle-card glass-panel emotional-card">
+                    <div class="cycle-header">
+                        <h3>❤️ Emotional</h3>
+                        <span class="cycle-percentage" id="emotional-percentage">0%</span>
+                    </div>
+                    <div class="cycle-bar">
+                        <div class="cycle-fill emotional-fill" id="emotional-fill"></div>
+                    </div>
+                    <div class="cycle-state" id="emotional-state">Calculating...</div>
+                    <p class="cycle-description" id="emotional-description"></p>
+                </div>
+
+                <!-- Intellectual Cycle -->
+                <div class="cycle-card glass-panel intellectual-card">
+                    <div class="cycle-header">
+                        <h3>🧠 Intellectual</h3>
+                        <span class="cycle-percentage" id="intellectual-percentage">0%</span>
+                    </div>
+                    <div class="cycle-bar">
+                        <div class="cycle-fill intellectual-fill" id="intellectual-fill"></div>
+                    </div>
+                    <div class="cycle-state" id="intellectual-state">Calculating...</div>
+                    <p class="cycle-description" id="intellectual-description"></p>
+                </div>
+            </div>
+
+            <!-- Share Container -->
+            <div class="share-section glass-panel">
+                <div class="share-container">
+                    <p class="share-title">Share your biorhythms</p>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" id="share-twitter">🐦 Twitter</button>
+                        <button class="share-btn facebook" id="share-facebook">📘 Facebook</button>
+                        <button class="share-btn download" id="share-download">📥 Download</button>
+                        <button class="share-btn copy" id="share-copy">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="share-utils.js"></script>
+    <script src="biorhythm.js"></script>
+</body>
+
+</html>

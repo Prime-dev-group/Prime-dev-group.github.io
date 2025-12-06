@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare with Friends - Astromage</title>
+    <meta name="description"
+        content="Compare horoscopes with your friends and discover your friendship compatibility score.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="compare-friends.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <a href="index.html" style="text-decoration: none;">
+                <h1 class="title">Astromage</h1>
+            </a>
+            <p class="subtitle">Compare with Friends</p>
+        </header>
+
+        <div class="comparison-container">
+            <!-- Selection Area -->
+            <div class="selection-area glass-panel" style="padding: 2rem; border-radius: 20px;">
+                <div class="select-group">
+                    <label class="select-label">Your Sign</label>
+                    <select id="sign1-select" class="zodiac-select">
+                        <option value="" disabled selected>Select Sign</option>
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
+
+                <div class="select-group">
+                    <label class="select-label">Friend's Sign</label>
+                    <select id="sign2-select" class="zodiac-select">
+                        <option value="" disabled selected>Select Sign</option>
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
+
+                <button id="compare-btn" class="compare-btn">Compare Signs</button>
+            </div>
+
+            <!-- Results Area -->
+            <div id="results-area" class="results-area">
+
+                <!-- Friendship Score -->
+                <div class="friendship-score-card">
+                    <h3 class="score-title">Friendship Compatibility</h3>
+                    <div class="score-value" id="score-value">0%</div>
+                    <div class="score-bar-container">
+                        <div class="score-bar-fill" id="score-bar"></div>
+                    </div>
+                    <p class="score-text" id="score-text">Select signs to see your compatibility.</p>
+                </div>
+
+                <!-- Side-by-Side Horoscopes -->
+                <div class="horoscopes-container">
+                    <!-- User Card -->
+                    <div class="horoscope-card">
+                        <div class="card-header">
+                            <div class="sign-icon" id="sign1-icon"></div>
+                            <div class="sign-name" id="sign1-name">Your Sign</div>
+                        </div>
+                        <p class="horoscope-text" id="sign1-horoscope">
+                            Daily horoscope will appear here.
+                        </p>
+                    </div>
+
+                    <!-- Friend Card -->
+                    <div class="horoscope-card">
+                        <div class="card-header">
+                            <div class="sign-icon" id="sign2-icon"></div>
+                            <div class="sign-name" id="sign2-name">Friend's Sign</div>
+                        </div>
+                        <p class="horoscope-text" id="sign2-horoscope">
+                            Daily horoscope will appear here.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Combined Reading -->
+                <div class="combined-reading-card">
+                    <h3 class="combined-title">Cosmic Connection</h3>
+                    <p class="combined-text" id="combined-reading">
+                        Your combined energy reading will appear here.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link"
+            style="margin-top: 3rem; color: var(--text-secondary); text-decoration: none; display: inline-block; padding: 1rem;">
+            ← Back to Home
+        </a>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="horoscope_data.js"></script>
+    <script src="compatibility_data.js"></script>
+    <script src="compare-friends.js"></script>
+    <script src="script.js"></script> <!-- Reusing main script for particles -->
+    <script src="theme.js"></script>
+</body>
+
+</html>

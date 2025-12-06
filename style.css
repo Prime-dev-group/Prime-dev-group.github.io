@@ -1,0 +1,846 @@
+:root {
+    --bg-color: #050714;
+    --bg-gradient: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0c0;
+    --accent-gold: #ffd700;
+    --accent-purple: #9d4edd;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-hover: rgba(255, 255, 255, 0.1);
+
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: var(--bg-color); Removed to show particles background */
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Animation */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--bg-gradient);
+    transition: background 0.5s ease;
+}
+
+/* Layout */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #fff, var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.subtitle {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+/* Zodiac Grid */
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.zodiac-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.zodiac-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
+}
+
+.zodiac-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.zodiac-card:hover .zodiac-icon {
+    transform: scale(1.1);
+}
+
+.zodiac-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.zodiac-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Love Compatibility Calculator Link Card */
+.calculator-link-card {
+    margin: 3rem auto;
+    max-width: 600px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.calculator-link-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    border-color: rgba(255, 107, 157, 0.5);
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+}
+
+.calculator-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.calculator-link-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    background: linear-gradient(to right, #ff6b9d, var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.calculator-link-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Share Buttons */
+.share-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.share-title {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.share-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.share-btn.twitter:hover {
+    border-color: #1DA1F2;
+    background: rgba(29, 161, 242, 0.1);
+}
+
+.share-btn.facebook:hover {
+    border-color: #4267B2;
+    background: rgba(66, 103, 178, 0.1);
+}
+
+.share-btn.download:hover {
+    border-color: #ff6b9d;
+    background: rgba(255, 107, 157, 0.1);
+}
+
+.share-btn.copy:hover {
+    border-color: var(--accent-purple);
+    background: rgba(157, 78, 221, 0.1);
+}
+
+/* Share Notification */
+.share-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(20, 20, 35, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--accent-gold);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 10000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.share-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.share-notification.success {
+    border-color: #4ade80;
+}
+
+.share-notification.error {
+    border-color: #f87171;
+}
+
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: rgba(20, 20, 35, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--accent-gold);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.1);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#modal-sign-name {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: center;
+    min-height: 200px;
+    /* Prevent layout jump */
+}
+
+/* Tabs */
+.modal-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tab-btn.active {
+    color: var(--accent-gold);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-gold);
+    box-shadow: 0 0 10px var(--accent-gold);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Profile Styles */
+.profile-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meta-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meta-value {
+    font-family: var(--font-heading);
+    color: var(--accent-purple);
+    font-size: 1.2rem;
+}
+
+.profile-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.keyword-tag {
+    background: rgba(157, 78, 221, 0.2);
+    border: 1px solid var(--accent-purple);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.profile-traits {
+    font-style: italic;
+    color: #d0d0d0;
+}
+
+/* Yearly Forecast Styles */
+.yearly-forecast-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 1rem;
+    text-align: left;
+
+    /* Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) var(--glass-bg);
+}
+
+.yearly-forecast-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.yearly-forecast-container::-webkit-scrollbar-track {
+    background: var(--glass-bg);
+    border-radius: 3px;
+}
+
+.yearly-forecast-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-gold);
+    border-radius: 3px;
+}
+
+.yearly-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    white-space: pre-wrap;
+    /* Preserve formatting */
+}
+
+/* Profile Container - Scrollable like Yearly Forecast */
+.profile-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 1rem;
+    text-align: left;
+
+    /* Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) var(--glass-bg);
+}
+
+.profile-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.profile-container::-webkit-scrollbar-track {
+    background: var(--glass-bg);
+    border-radius: 3px;
+}
+
+.profile-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-gold);
+    border-radius: 3px;
+}
+
+/* Profile Section Styling */
+.profile-section {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.profile-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.trait-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.trait-list li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compatibility-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.compatibility-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+
+/* Mobile Devices (Portrait phones, less than 480px) */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    /* 2-column grid like iPad */
+    .zodiac-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .zodiac-card {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .zodiac-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .zodiac-name {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .zodiac-date {
+        font-size: 0.75rem;
+    }
+
+    /* Modal Responsive Fixes */
+    .modal-content {
+        padding: 1rem;
+        width: 95%;
+        max-width: 95vw;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-header {
+        margin-bottom: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .modal-icon {
+        font-size: 2rem;
+    }
+
+    .modal-date-range {
+        font-size: 0.85rem;
+    }
+
+    /* Tabs responsive */
+    .modal-tabs {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .tab-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .tab-btn.active::after {
+        bottom: -0.75rem;
+    }
+
+    /* Profile meta responsive */
+    .profile-meta {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .meta-label {
+        font-size: 0.75rem;
+    }
+
+    .meta-value {
+        font-size: 0.9rem;
+    }
+
+    /* Keywords responsive */
+    .profile-keywords {
+        gap: 0.4rem;
+    }
+
+    .keyword-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    /* Traits text */
+    .profile-traits {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Profile sections */
+    .profile-section h4 {
+        font-size: 1rem;
+    }
+
+    .trait-list {
+        gap: 0.4rem;
+    }
+
+    .trait-list li {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    .compatibility-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    /* Yearly and profile containers */
+    .yearly-forecast-container,
+    .profile-container {
+        max-height: 250px;
+        padding-right: 0.5rem;
+    }
+
+    .yearly-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Close button */
+    .close-btn {
+        font-size: 2rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    /* Love Calculator Link Card Responsive */
+    .calculator-link-card {
+        padding: 2rem 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .calculator-icon {
+        font-size: 3rem;
+    }
+
+    .calculator-link-title {
+        font-size: 1.5rem;
+    }
+
+    .calculator-link-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (Landscape phones and tablets, 481px to 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .modal-content {
+        max-width: 80%;
+    }
+}
+
+/* Laptops and Desktops (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .app-container {
+        max-width: 1000px;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Smart TVs and Large Screens (1441px and up) */
+@media (min-width: 1441px) {
+    html {
+        font-size: 18px;
+        /* Scale up base font size for distance viewing */
+    }
+
+    .app-container {
+        max-width: 1600px;
+        padding: 4rem;
+    }
+
+    .title {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .zodiac-card {
+        padding: 3rem 2rem;
+    }
+
+    .zodiac-icon {
+        font-size: 4rem;
+    }
+
+    .zodiac-name {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        max-width: 800px;
+        padding: 4rem;
+    }
+
+    .close-btn {
+        font-size: 3rem;
+        top: 2rem;
+        right: 2rem;
+    }
+}

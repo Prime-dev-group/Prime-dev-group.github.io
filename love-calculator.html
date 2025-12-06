@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Compatibility Calculator - Astromage</title>
+    <meta name="description"
+        content="Discover your cosmic love connection with Astromage's Love Compatibility Calculator.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="love-calculator.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="index.html" class="back-link">← Back to Horoscopes</a>
+        </nav>
+
+        <header class="hero">
+            <h1 class="title">💕 Love Compatibility Calculator</h1>
+            <p class="subtitle">Discover your cosmic connection</p>
+        </header>
+
+        <!-- Love Compatibility Calculator -->
+        <section class="love-calculator glass-panel">
+            <div class="calculator-inputs">
+                <div class="input-group">
+                    <label for="name1">First Name</label>
+                    <input type="text" id="name1" placeholder="Enter first name" maxlength="30">
+                </div>
+
+                <div class="heart-divider">💗</div>
+
+                <div class="input-group">
+                    <label for="name2">Second Name</label>
+                    <input type="text" id="name2" placeholder="Enter second name" maxlength="30">
+                </div>
+            </div>
+
+            <button class="calculate-btn" id="calculate-love">Calculate Compatibility</button>
+
+            <div class="result-container hidden" id="love-result">
+                <div class="result-hearts">💖</div>
+                <div class="result-score" id="score-display">0%</div>
+                <div class="result-message" id="result-message">Perfect Match!</div>
+
+                <!-- Share Container -->
+                <div class="share-container" id="love-share-container" style="display: none;">
+                    <p class="share-title">Share your compatibility</p>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" id="love-share-twitter">🐦 Twitter</button>
+                        <button class="share-btn facebook" id="love-share-facebook">📘 Facebook</button>
+                        <button class="share-btn download" id="love-share-download">📥 Download</button>
+                        <button class="share-btn copy" id="love-share-copy">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Info Section -->
+        <section class="info-section glass-panel">
+            <h2>How It Works</h2>
+            <p>Our Love Compatibility Calculator uses a unique cosmic algorithm that analyzes:</p>
+            <ul class="info-list">
+                <li>✨ Letter frequency harmony between names</li>
+                <li>🌙 Name length cosmic balance</li>
+                <li>⭐ Vowel ratio synchronization</li>
+                <li>💫 Character energy alignment</li>
+            </ul>
+            <p class="info-note">Remember, true love transcends the stars, but it's fun to see what the cosmos say!</p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="share-utils.js"></script>
+    <script src="love-calculator.js"></script>
+</body>
+
+</html>

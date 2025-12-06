@@ -1,0 +1,229 @@
+/* Theme Definitions */
+
+/* Default Theme (Cosmic Purple) is defined in style.css :root */
+
+/* Solar Gold Theme (Light Mode) */
+/* Solar Gold Theme (Light Mode) */
+body.theme-solar {
+    --bg-color: #fdf6e3;
+    --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #fdf6e3 100%);
+    --text-primary: #2c3e50;
+    --text-secondary: #5d6d7e;
+    --accent-gold: #d4ac0d;
+    --accent-purple: #8e44ad;
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --card-hover: rgba(0, 0, 0, 0.05);
+}
+
+/* Lunar Silver Theme (High Contrast Dark) */
+body.theme-lunar {
+    --bg-color: #000000;
+    --bg-gradient: linear-gradient(to bottom, #000000, #1a1a1a);
+    --text-primary: #ffffff;
+    --text-secondary: #dcdcdc;
+    --accent-gold: #ffffff;
+    /* Pure white for high contrast */
+    --accent-purple: #c0c0c0;
+    /* Silver */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --card-hover: rgba(255, 255, 255, 0.15);
+}
+
+/* Accessibility Options */
+
+/* Reduced Motion */
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Large Text */
+/* Large Text */
+html.large-text {
+    font-size: 125%;
+    /* Scales 1rem to approx 20px */
+}
+
+/* Theme Settings Panel */
+.theme-settings-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+}
+
+.theme-settings-btn:hover {
+    transform: rotate(90deg);
+    background: var(--accent-gold);
+    color: #000;
+}
+
+.theme-panel {
+    position: fixed;
+    bottom: 5rem;
+    left: 2rem;
+    width: 300px;
+    background: rgba(20, 20, 35, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    z-index: 9999;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.theme-panel.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Solar Theme Specific Overrides for Panel */
+body.theme-solar .theme-panel {
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--text-primary);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+
+.panel-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+}
+
+.panel-section {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.theme-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.theme-option {
+    flex: 1;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.theme-option.active {
+    border-color: var(--accent-gold);
+    transform: scale(1.05);
+}
+
+.theme-option[data-theme="cosmic"] {
+    background: linear-gradient(135deg, #050714, #1b2735);
+}
+
+.theme-option[data-theme="solar"] {
+    background: linear-gradient(135deg, #fdf6e3, #ffffff);
+}
+
+.theme-option[data-theme="lunar"] {
+    background: linear-gradient(135deg, #000000, #333333);
+}
+
+/* Toggles */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.toggle-label {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid var(--glass-border);
+}
+
+body.theme-solar .slider {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--accent-purple);
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}

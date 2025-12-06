@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crush Compatibility - Astromage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="crush-compatibility.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main>
+        <nav class="back-nav">
+            <a href="index.html" class="back-link">← Back to Horoscopes</a>
+        </nav>
+
+        <section class="crush-calculator glass-panel">
+            <div class="privacy-badge">🤫 Your secret is safe with us</div>
+
+            <div class="header">
+                <div class="icon">💘</div>
+                <h1 class="title">Crush Compatibility</h1>
+                <p class="subtitle">Find out if you're meant to be... anonymously 😉</p>
+            </div>
+
+            <div class="calculator-inputs">
+                <div class="input-group">
+                    <label for="your-name">Your Name</label>
+                    <input type="text" id="your-name" placeholder="Enter your name" class="name-input">
+                </div>
+
+                <div class="heart-divider">💖</div>
+
+                <div class="input-group">
+                    <label for="crush-name">Your Crush's Name</label>
+                    <input type="text" id="crush-name" placeholder="Enter their name" class="name-input">
+                </div>
+            </div>
+
+            <button class="calculate-btn" id="calculate-crush">
+                <span>Check Compatibility</span>
+                <span class="btn-icon">✨</span>
+            </button>
+
+            <div class="result-container hidden" id="crush-result">
+                <div class="result-hearts">💕</div>
+                <div class="result-score" id="score-display">0%</div>
+                <div class="result-message" id="result-message">Perfect Match!</div>
+
+                <div class="result-tips" id="result-tips">
+                    <h3>💡 What This Means</h3>
+                    <p id="tips-text"></p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn save-btn" id="save-result">
+                        <span>💾 Save Result</span>
+                    </button>
+                    <button class="action-btn new-btn" id="new-calculation">
+                        <span>🔄 Try Another</span>
+                    </button>
+                </div>
+
+                <!-- Share Container -->
+                <div class="share-container" id="crush-share-container" style="display: none;">
+                    <p class="share-title">Share anonymously (names hidden)</p>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" id="crush-share-twitter">🐦 Twitter</button>
+                        <button class="share-btn facebook" id="crush-share-facebook">📘 Facebook</button>
+                        <button class="share-btn download" id="crush-share-download">📥 Download</button>
+                        <button class="share-btn copy" id="crush-share-copy">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Saved Results Section -->
+        <section class="saved-results glass-panel hidden" id="saved-section">
+            <h2 class="saved-title">💾 Your Saved Results</h2>
+            <div class="saved-list" id="saved-list"></div>
+            <button class="clear-all-btn" id="clear-all">Clear All</button>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section glass-panel">
+            <h2>🔒 Privacy First</h2>
+            <p>Your crush compatibility checks are completely private:</p>
+            <ul class="privacy-list">
+                <li>✅ All calculations happen in your browser</li>
+                <li>✅ No data is sent to any server</li>
+                <li>✅ Results are saved only on your device</li>
+                <li>✅ Share anonymously without revealing names</li>
+            </ul>
+
+            <h3>💭 How It Works</h3>
+            <p class="info-text">Our compatibility algorithm analyzes name patterns, letter frequencies, and cosmic
+                vibrations to calculate your match percentage. While it's just for fun, you might be surprised by the
+                results!</p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="share-utils.js"></script>
+    <script src="crush-compatibility.js"></script>
+</body>
+
+</html>

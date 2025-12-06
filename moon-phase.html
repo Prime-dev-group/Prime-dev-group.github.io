@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Phase Tracker - Astromage</title>
+    <meta name="description" content="Track the current moon phase and discover its influence on your zodiac sign.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="moon-phase.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <a href="index.html" class="back-btn" aria-label="Back to Home">← Back</a>
+            <h1 class="title">🌙 Moon Phase Tracker</h1>
+            <p class="subtitle">Discover tonight's lunar energy</p>
+        </header>
+
+        <section class="moon-display-section glass-panel">
+            <div class="moon-container">
+                <div class="moon" id="moon">
+                    <div class="moon-shadow" id="moon-shadow"></div>
+                </div>
+            </div>
+
+            <div class="moon-info">
+                <h2 class="moon-phase-name" id="moon-phase-name">Loading...</h2>
+                <p class="moon-date" id="moon-date"></p>
+                <div class="moon-details">
+                    <div class="moon-detail-item">
+                        <span class="detail-label">Illumination</span>
+                        <span class="detail-value" id="moon-illumination">0%</span>
+                    </div>
+                    <div class="moon-detail-item">
+                        <span class="detail-label">Lunar Day</span>
+                        <span class="detail-value" id="lunar-day">0</span>
+                    </div>
+                </div>
+                <div class="moon-description" id="moon-description"></div>
+                <div class="moon-energy">
+                    <h4>Energy Focus</h4>
+                    <p id="moon-energy"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="zodiac-insights-section glass-panel">
+            <h2 class="section-title">How This Moon Phase Affects You</h2>
+            <p class="section-subtitle">Select your zodiac sign for personalized insights</p>
+
+            <div class="zodiac-selector" id="zodiac-selector">
+                <!-- Zodiac buttons will be populated by JS -->
+            </div>
+
+            <div id="zodiac-insights-container" class="zodiac-insights-container hidden">
+                <div class="insights-header">
+                    <div class="insight-sign-icon" id="insight-sign-icon"></div>
+                    <h3 id="insight-sign-name"></h3>
+                </div>
+
+                <div class="insight-content">
+                    <div class="insight-section">
+                        <h4>💫 Cosmic Advice</h4>
+                        <p id="insight-advice"></p>
+                    </div>
+
+                    <div class="insight-section">
+                        <h4>🎯 Focus Areas</h4>
+                        <p id="insight-focus"></p>
+                    </div>
+                </div>
+
+                <!-- Share Container -->
+                <div class="share-container">
+                    <p class="share-title">Share your moon insights</p>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" id="share-twitter">🐦 Twitter</button>
+                        <button class="share-btn facebook" id="share-facebook">📘 Facebook</button>
+                        <button class="share-btn download" id="share-download">📥 Download</button>
+                        <button class="share-btn copy" id="share-copy">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="moon_phase_data.js"></script>
+    <script src="share-utils.js"></script>
+    <script src="moon-phase.js"></script>
+</body>
+
+</html>

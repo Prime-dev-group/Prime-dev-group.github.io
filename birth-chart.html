@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Chart Calculator - Astromage</title>
+    <meta name="description"
+        content="Calculate your Sun, Moon, and Rising signs with Astromage's Birth Chart Calculator.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="birth-chart.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero small-hero">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h1 class="title">Birth Chart Calculator</h1>
+            <p class="subtitle">Discover the blueprint of your soul</p>
+        </header>
+
+        <section class="calculator-container glass-panel">
+            <form id="birth-chart-form" class="calculator-form">
+                <div class="form-group">
+                    <label for="birth-date">Date of Birth</label>
+                    <input type="date" id="birth-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth-time">Time of Birth (Exact is best)</label>
+                    <input type="time" id="birth-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth-location">Location (City, Country)</label>
+                    <input type="text" id="birth-location" placeholder="e.g., New York, USA" required>
+                    <!-- Hidden fields for lat/long -->
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+                    <div id="location-suggestions" class="suggestions-list hidden"></div>
+                </div>
+                <button type="submit" class="calculate-btn">Calculate Chart</button>
+            </form>
+
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+                <p>Aligning the stars...</p>
+            </div>
+
+            <div id="results-container" class="results-container hidden">
+                <div class="chart-visual" id="chart-visual">
+                    <!-- SVG or Canvas will go here -->
+                </div>
+
+                <div class="planetary-positions">
+                    <div class="planet-card sun-card">
+                        <div class="planet-icon">☉</div>
+                        <h3>Sun Sign</h3>
+                        <p class="sign-name" id="sun-sign">--</p>
+                        <p class="interpretation" id="sun-interpretation">--</p>
+                    </div>
+                    <div class="planet-card moon-card">
+                        <div class="planet-icon">☽</div>
+                        <h3>Moon Sign</h3>
+                        <p class="sign-name" id="moon-sign">--</p>
+                        <p class="interpretation" id="moon-interpretation">--</p>
+                    </div>
+                    <div class="planet-card rising-card">
+                        <div class="planet-icon">↑</div>
+                        <h3>Rising Sign</h3>
+                        <p class="sign-name" id="rising-sign">--</p>
+                        <p class="interpretation" id="rising-interpretation">--</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="birth_chart_data.js"></script>
+    <script src="birth-chart.js"></script>
+</body>
+
+</html>
