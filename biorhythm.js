@@ -267,11 +267,11 @@ function displayResults(biorhythm) {
     intellectualState.style.color = intellectualStateData.color;
     intellectualDescription.textContent = getCycleDescription('intellectual', biorhythm.intellectual.percentage);
 
-    // Draw waves
-    drawBiorhythmWaves(biorhythm);
-
     // Show results
     resultsSection.classList.remove('hidden');
+
+    // Draw waves (must be done after showing results so canvas has dimensions)
+    drawBiorhythmWaves(biorhythm);
 
     // Scroll to results
     setTimeout(() => {
