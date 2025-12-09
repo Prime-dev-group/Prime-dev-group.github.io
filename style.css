@@ -501,6 +501,15 @@ body {
     /* Preserve formatting */
 }
 
+.yearly-text strong {
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block; /* Allows spacing to work better if needed, but safer inline */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+
 /* Profile Container - Scrollable like Yearly Forecast */
 .profile-container {
     max-height: 300px;

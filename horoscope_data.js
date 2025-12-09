@@ -16,7 +16,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Impatient", "Moody", "Short-tempered", "Impulsive", "Aggressive"],
         compatibility: "**Most Compatible:** Leo, Sagittarius, Gemini, Aquarius.\n**Least Compatible:** Cancer, Capricorn.",
         horoscope: "Today is a day for action! Your energy levels are high, and you're ready to tackle any challenge that comes your way. Trust your instincts and take the lead.",
-        yearly_forecast: "**2025 Overview:** This year brings a surge of energy and new beginnings. You will find yourself taking on leadership roles and initiating exciting projects.\n\n**Love:** Passion is in the air! Existing relationships deepen, while singles may find a spark in unexpected places.\n\n**Career:** Your ambition will be rewarded. Look out for a promotion or a new opportunity that aligns with your passions."
+        yearly_forecast: "**2025 Overview:** A powerful year for inner reflection and professional growth. Until May, Jupiter brings unexpected opportunities. Focus on self-analysis to prepare for big transformations.\n\n**Love:** Relationships deepen through shared activities. Passion is high, but communication is crucial to avoid misunderstandings.\n\n**Career:** Immense opportunities await, especially in the first half of the year. Networking and seizing unexpected offers will lead to success.\n\n**Health:** Prioritize sleep and stress management. Improved productivity depends on balancing your energy.\n\n**Education:** An above-average year. Success in competitive exams is likely until May. Students in tourism or media will thrive.\n\n**Family & Travel:** Domestic life may see mixed results; use logic to resolve conflicts. Long-distance travel between April and June brings mental peace. A trip to **Greece** is highly recommended!"
     },
     {
         name: "Taurus",
@@ -30,7 +30,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Stubborn", "Possessive", "Uncompromising"],
         compatibility: "**Most Compatible:** Virgo, Capricorn, Cancer, Pisces.\n**Least Compatible:** Leo, Aquarius.",
         horoscope: "Take a moment to appreciate the finer things in life today. A slow and steady approach will yield the best results. Focus on stability and comfort.",
-        yearly_forecast: "**2025 Overview:** Stability and growth are your themes for the year. Your hard work will pay off, bringing financial security and personal satisfaction.\n\n**Love:** Relationships require patience and understanding. meaningful connections will flourish.\n\n**Career:** Stick to your plans. Consistent effort will lead to long-term success."
+        yearly_forecast: "**2025 Overview:** A spectacular year of stability and prosperity. Surprises from Uranus fade, leaving room for a \"fresh start\" in personal life and finances.\n\n**Love:** Meaningful connections flourish. It's a time to build a partnership that feels like home, moving away from fleeting flings.\n\n**Career:** Financially prosperous! Jupiter boosts income and lifestyle, but caution against overspending is advised. Investments look promising.\n\n**Health:** Watch for digestive issues; proactive check-ups are key. Mental peace comes from a stable routine.\n\n**Education:** Academic performance peaks from January to March. High school students may relocate for better opportunities.\n\n**Family & Travel:** Family life requires patience due to dynamic shifts. Step out of your comfort zone—a cultural trip to the **Netherlands** or **Tanzania** will be transformative."
     },
     {
         name: "Gemini",
@@ -44,7 +44,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Nervous", "Inconsistent", "Indecisive"],
         compatibility: "**Most Compatible:** Libra, Aquarius, Aries, Leo.\n**Least Compatible:** Virgo, Pisces.",
         horoscope: "Your mind is buzzing with ideas today. It's a great time for communication, networking, and learning something new. Stay curious!",
-        yearly_forecast: "**2025 Overview:** A year of intellectual expansion and social connection. You'll learn new skills and meet fascinating people.\n\n**Love:** Communication is key. Express your feelings openly to strengthen bonds.\n\n**Career:** Networking will open doors. Be ready to adapt to new opportunities."
+        yearly_forecast: "**2025 Overview:** One of your luckiest years! Major developments in love and career await as Uranus enters your sign mid-year, sparking independence.\n\n**Love:** New, meaningful relationships form early. Intellectual connection is vital—if the mind isn't engaged, the heart won't follow.\n\n**Career:** Major professional development is on the horizon. Your unique voice and ideas are your greatest assets.\n\n**Health:** Balance nervous energy with breathwork or yoga. Mental wellness is as important as physical fitness this year.\n\n**Education:** Excellent for competitive exams. Creativity is high, but managing time is essential for success.\n\n**Family & Travel:** Married life starts happily. Travel for work and exploration is favored—consider visiting **Italy** or **Scotland** to feed your curiosity."
     },
     {
         name: "Cancer",
@@ -58,7 +58,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Moody", "Pessimistic", "Suspicious", "Manipulative", "Insecure"],
         compatibility: "**Most Compatible:** Scorpio, Pisces, Taurus, Virgo.\n**Least Compatible:** Aries, Libra.",
         horoscope: "Trust your intuition today. You may feel more emotional than usual, so take time for self-care and connect with loved ones.",
-        yearly_forecast: "**2025 Overview:** Emotional growth and deepening relationships are highlighted. You'll find comfort in home and family.\n\n**Love:** Vulnerability will bring you closer to your partner. Singles may find a soulmate.\n\n**Career:** Trust your gut instincts in business matters. Creative projects will thrive."
+        yearly_forecast: "**2025 Overview:** A transformative year. Career struggles fade after March, leading to a lucky cycle when Jupiter enters your sign in June.\n\n**Love:** A roller-coaster start leads to blossoming romance by late January. Jupiter boosts joy in family and secure bonding.\n\n**Career:** A great period for finding work or launching projects. Trust your gut—your visibility and influence are increasing.\n\n**Health:** Vitality is good initially, but avoid overworking. Support your emotional well-being with nutrient-rich foods.\n\n**Education:** Self-discovery is key. Admissions to prestigious universities are possible, but discipline is required.\n\n**Family & Travel:** Focus on domestic peace early in the year. Travel for business expansion is likely—**Belize** is a spiritual and beautiful destination for you."
     },
     {
         name: "Leo",
@@ -72,7 +72,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Arrogant", "Stubborn", "Self-centered", "Lazy", "Inflexible"],
         compatibility: "**Most Compatible:** Aries, Sagittarius, Gemini, Libra.\n**Least Compatible:** Taurus, Scorpio.",
         horoscope: "Shine bright today! Your charisma is magnetic, drawing people towards you. Use your creativity to express yourself and inspire others.",
-        yearly_forecast: "**2025 Overview:** It's your time to shine! Recognition and success are on the horizon. Embrace your creativity and leadership skills.\n\n**Love:** Romance is sizzling. Expect grand gestures and passionate encounters.\n\n**Career:** You'll be in the spotlight. Take credit for your achievements and aim high."
+        yearly_forecast: "**2025 Overview:** A fulfilled journey from slow starts to summer popularity. The second half invites you to retreat and prepare for a 2026 reinvention.\n\n**Love:** Excellent shape early in the year. It's an ideal time to gain clarity and strengthen bonds with your partner.\n\n**Career:** Partnerships drive success. Teamwork is your golden ticket, so share the spotlight to achieve your big goals.\n\n**Health:** Protect your heart health with cardio. Seasonal minor issues may arise, but overall vitality is strong.\n\n**Education:** A year of development and leadership in potential student roles. Good results are expected.\n\n**Family & Travel:** Family feels secure and harmonious. You crave luxury with adventure—**New Zealand** or **Tanzania** will offer the grand memories you seek."
     },
     {
         name: "Virgo",
@@ -81,12 +81,12 @@ const HOROSCOPE_DATA = [
         element: "Earth",
         ruling_planet: "Mercury",
         keywords: ["Loyal", "Analytical", "Kind"],
-        traits: "Virgo is an earth sign historically represented by the goddess of wheat and agriculture, an association that speaks to Virgo’s deep-rooted presence in the material world. Virgos are logical, practical, and systematic in their approach to life.",
+        traits: "Virgo is an earth sign historically represented by the goddess of wheat and agriculture, an association that reflects Virgo’s deep-rooted presence in the material world. Virgos are logical, practical, and systematic in their approach to life.",
         strengths: ["Loyal", "Analytical", "Kind", "Hardworking", "Practical"],
         weaknesses: ["Shyness", "Worry", "Overly critical of self and others", "All work and no play"],
         compatibility: "**Most Compatible:** Taurus, Capricorn, Cancer, Scorpio.\n**Least Compatible:** Gemini, Sagittarius.",
         horoscope: "Focus on the details today. Your analytical skills are sharp, making it a perfect day for organizing, planning, and solving problems.",
-        yearly_forecast: "**2025 Overview:** A year of productivity and self-improvement. Your attention to detail will lead to significant accomplishments.\n\n**Love:** Practical acts of service will show your love. Relationships built on mutual respect will thrive.\n\n**Career:** Your efficiency will be noticed. It's a good time to refine your skills and organize your workflow."
+        yearly_forecast: "**2025 Overview:** Important lessons and big wins. Eclipses shake up relationships, challenging you to find joy in your inner world.\n\n**Love:** Commitment is tested. Whether single or attached, focus on relationships that support your personal growth and joy.\n\n**Career:** Saturn tests patience, but consistent effort pays off. Expect recognition for your efficiency in the second half.\n\n**Health:** Avoid overworking your digestive system. Schedule lighter meals and ensure you take mental breaks.\n\n**Education:** Hard work is needed after May. Organization is your superpower and will lead to success.\n\n**Family & Travel:** Family life may need extra effort after May. You prefer organized trips—traditional festivals in **Italy** or the history of **Greece** will delight you."
     },
     {
         name: "Libra",
@@ -100,7 +100,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Indecisive", "Avoids confrontations", "Will carry a grudge", "Self-pity"],
         compatibility: "**Most Compatible:** Gemini, Aquarius, Leo, Sagittarius.\n**Least Compatible:** Cancer, Capricorn.",
         horoscope: "Seek balance and harmony today. It's a great day for socializing, resolving conflicts, and appreciating beauty in your surroundings.",
-        yearly_forecast: "**2025 Overview:** Relationships and partnerships take center stage. You'll find balance and harmony in your personal and professional life.\n\n**Love:** Romance is favored. New relationships may form, or existing ones will reach a new level of commitment.\n\n**Career:** Collaboration is key. Working with others will bring the best results."
+        yearly_forecast: "**2025 Overview:** Big changes and new horizons! Adventure and travel call in the first half, followed by career expansion.\n\n**Love:** March turns up the heat. Drop illusions and communicate clearly. Boundaries will actually bring you closer to true intimacy.\n\n**Career:** A major level-up awaits. A new role aligning with your values is likely, especially after June.\n\n**Health:** Hydration is key for skin and kidney health. Recovery from past ailments looks very favorable.\n\n**Education:** Collaborative learning brings success. February is the ideal month for educational planning.\n\n**Family & Travel:** Family bonds strengthen after mid-May. Travel for growth is indicated—a retreat in **Kerala, India** could offer the balance you seek."
     },
     {
         name: "Scorpio",
@@ -114,7 +114,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Distrusting", "Jealous", "Secretive", "Violent"],
         compatibility: "**Most Compatible:** Cancer, Pisces, Virgo, Taurus.\n**Least Compatible:** Leo, Aquarius.",
         horoscope: "Dive deep into your passions today. Your intensity can be a powerful force for transformation. Don't be afraid to explore the mysteries of life.",
-        yearly_forecast: "**2025 Overview:** A year of transformation and empowerment. You'll shed old habits and emerge stronger and more resilient.\n\n**Love:** Intense and passionate connections are likely. Trust and intimacy will be tested and strengthened.\n\n**Career:** Your determination will help you overcome obstacles. Research and investigation will yield rewards."
+        yearly_forecast: "**2025 Overview:** A dynamic mix of opportunities. Cosmic shifts alter your course, bringing meaningful growth early in the year.\n\n**Love:** Singles might find someone special early. Existing relationships strengthen, with serious commitments like marriage possible.\n\n**Career:** Education and new skills are highlighted. It's a fantastic year to learn something that adds value to your toolkit.\n\n**Health:** Generally robust physical health. Minor ailments will be short-lived, so stay active.\n\n**Education:** Hard work pays off for exam takers. Travel for education may bring clarity.\n\n**Family & Travel:** Harmony prevails in the first half. Travel with friends or family is encouraged—explore the **Dampier Archipelago, Australia** for adventure."
     },
     {
         name: "Sagittarius",
@@ -128,7 +128,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Promises more than can deliver", "Very impatient", "Will say anything no matter how undiplomatic"],
         compatibility: "**Most Compatible:** Aries, Leo, Libra, Aquarius.\n**Least Compatible:** Virgo, Pisces.",
         horoscope: "Adventure awaits! Expand your horizons today, whether through travel, learning, or trying something new. Embrace your optimistic spirit.",
-        yearly_forecast: "**2025 Overview:** Expansion and adventure are in store. You'll explore new territories, both physical and intellectual.\n\n**Love:** Freedom and fun are essential. You'll be attracted to partners who share your sense of adventure.\n\n**Career:** Opportunities for growth and learning abound. Teaching, publishing, or travel-related fields are favored."
+        yearly_forecast: "**2025 Overview:** A supportive start with Jupiter aiding plans. You must balance your free spirit with Saturn’s demand for discipline.\n\n**Love:** Professional life may distract initially, but Venus brings rewards later. Stability becomes more attractive than fleeting fun.\n\n**Career:** Mixed outcomes lead to success if you persist. Hard work is non-negotiable, but new avenues open after May.\n\n**Health:** Optimistic outlook, but watch for mental pressure. Meditation or yoga will help keep your fire balanced.\n\n**Education:** Unconventional fields call to you. Internships abroad will expand your horizons.\n\n**Family & Travel:** Mutual support strengthens family bonds. Your adventurous spirit will love festivals in **Italy** or the landscapes of **Vietnam**."
     },
     {
         name: "Capricorn",
@@ -142,7 +142,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Know-it-all", "Unforgiving", "Condescending", "Expecting the worst"],
         compatibility: "**Most Compatible:** Taurus, Virgo, Scorpio, Pisces.\n**Least Compatible:** Aries, Libra.",
         horoscope: "Focus on your goals and ambitions today. Your discipline and hard work will pay off. Take a structured approach to your tasks.",
-        yearly_forecast: "**2025 Overview:** Hard work and discipline will lead to significant achievements. You'll build a solid foundation for the future.\n\n**Love:** Commitment and stability are important. You'll value a partner who supports your ambitions.\n\n**Career:** Professional success is within reach. Your leadership skills will be recognized."
+        yearly_forecast: "**2025 Overview:** Big transitions in every area. The pressure gives way to evolution and financial refinement.\n\n**Love:** Social expansion brings joy. Existing partnerships flourish, and singles may find stable, long-term prospects.\n\n**Career:** Financial growth is the focus. Saturn helps you solidify plans, and collaboration becomes your path to the top.\n\n**Health:** Strengthen your bones with Vitamin D and resistance training to match your strong ambition.\n\n**Education:** Consistent success. Good for long-term goals and certifications due to strong concentration.\n\n**Family & Travel:** Good news from maternal relatives is likely. You prefer structured trips—relaxing in **Monaco** or hiking in **Argentina** fits your style."
     },
     {
         name: "Aquarius",
@@ -156,7 +156,7 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Runs from emotional expression", "Temperamental", "Uncompromising", "Aloof"],
         compatibility: "**Most Compatible:** Gemini, Libra, Aries, Sagittarius.\n**Least Compatible:** Taurus, Scorpio.",
         horoscope: "Embrace your uniqueness today. Your innovative ideas can lead to positive change. Connect with your community and fight for what you believe in.",
-        yearly_forecast: "**2025 Overview:** Innovation and social change are your themes. You'll be inspired to make a difference in the world.\n\n**Love:** Intellectual connection is vital. You'll be drawn to unconventional and free-spirited partners.\n\n**Career:** Collaborative projects and technology-related fields will thrive. Don't be afraid to think outside the box."
+        yearly_forecast: "**2025 Overview:** A year to shine! Significant growth in career and finances. The first half is for planning; the second brings breakthroughs.\n\n**Love:** Communication is your lifeline. Long-distance or online connections could surprise you. Patience is key in matters of the heart.\n\n**Career:** Saturn gives you control over your path, while Jupiter offers expansion. Property investments and financial gains look favorable.\n\n**Health:** Improve circulation with movement breaks. Consistent activity keeps your innovative mind sharp.\n\n**Education:** Excellent prospects for research and higher education, especially after May.\n\n**Family & Travel:** Family tension fades after mid-year. Professional changes in spring might inspire travel—consider the cool vibes of **Oslo, Norway**."
     },
     {
         name: "Pisces",
@@ -170,6 +170,6 @@ const HOROSCOPE_DATA = [
         weaknesses: ["Fearful", "Overly trusting", "Sad", "Desire to escape reality"],
         compatibility: "**Most Compatible:** Cancer, Scorpio, Taurus, Capricorn.\n**Least Compatible:** Gemini, Sagittarius.",
         horoscope: "Let your imagination soar today. Your intuition is strong, so listen to your inner voice. Express your creativity through art or music.",
-        yearly_forecast: "**2025 Overview:** A year of spiritual growth and creativity. You'll feel more connected to your intuition and the universe.\n\n**Love:** Romance is dreamy and idealistic. You'll seek a soul connection with your partner.\n\n**Career:** Artistic and healing professions are favored. Trust your intuition to guide your career path."
+        yearly_forecast: "**2025 Overview:** Introspection and rebirth. As Saturn prepares to leave, you emerge more grounded, mature, and spiritually connected.\n\n**Love:** Relationships take on a deeper meaning. You seek soul connections, and casual dating loses its appeal.\n\n**Career:** Strategic planning wins the race. It's a year to balance your dreams with reality. Artistic and healing professions continue to be favored.\n\n**Health:** Support your immunity with herbal teas and adaptogens. Your sensitive nature needs extra care during this transition.\n\n**Education:** Success in creative fields. Studying abroad or travel-related subjects is highly favored.\n\n**Family & Travel:** Manage minor family tensions with communication. Travel for relaxation is key—the beaches of **Thailand** call to your water spirit."
     }
 ];
