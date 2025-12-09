@@ -158,6 +158,9 @@ async function copyToClipboard(text) {
     }
 }
 
+// App Link Constant
+const APP_LINK = 'https://play.google.com/store/apps/details?id=com.prime.astromage';
+
 // Main share function
 async function shareContent(options) {
     const {
@@ -171,20 +174,24 @@ async function shareContent(options) {
 
     // Try Web Share API first on mobile
     if (method === 'web') {
-        const shared = await shareViaWebAPI({ title, text });
+        const shared = await shareViaWebAPI({ 
+            title, 
+            text: `${text}\n\nDownload the app: ${APP_LINK}`,
+            url: APP_LINK 
+        });
         if (shared) return { success: true, method: 'web' };
     }
 
-    // Generate shareable text
-    const shareText = `${title}\n\n${text}\n\n✨ Discover your cosmic guidance at Astromage!`;
+    // Generate shareable text with App Link
+    const shareText = `${title}\n\n${text}\n\n📲 Download the app: ${APP_LINK}\n\n✨ Discover your cosmic guidance at Astromage!`;
 
     switch (method) {
         case 'twitter':
-            shareToTwitter(shareText);
+            shareToTwitter(shareText, APP_LINK);
             return { success: true, method: 'twitter' };
 
         case 'facebook':
-            shareToFacebook();
+            shareToFacebook(APP_LINK);
             return { success: true, method: 'facebook' };
 
         case 'copy':
