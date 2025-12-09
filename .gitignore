@@ -1,0 +1,5 @@
+# System files
+.DS_Store
+
+# Scripts and generated data
+scripts/
