@@ -15,7 +15,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Courageous", "Determined", "Confident", "Enthusiastic", "Optimistic"],
         weaknesses: ["Impatient", "Moody", "Short-tempered", "Impulsive", "Aggressive"],
         compatibility: "**Most Compatible:** Leo, Sagittarius, Gemini, Aquarius.\n**Least Compatible:** Cancer, Capricorn.",
-        horoscope: "Unchecked anger could escalate small matters and disturb family harmony. The wiser choice is to consciously calm yourself before reacting. Pay special attention to your children’s health today, as unexpected medical expenses are possible. Household concerns require prompt action, and emotional distance may be felt in love matters. At work, support from colleagues may be limited, so rely on your own efforts. Business owners may prefer spending quality time with family, strengthening bonds. External interference may arise, but your marital connection remains resilient.\n\nEmotions feel intense but more manageable today. If you stay grounded and avoid unnecessary confrontations, productivity improves. Focus on practical responsibilities and channel your drive into meaningful action."
+        horoscope: "You feel energetic and agile today, with your health strongly supporting you. It’s a good time to discuss savings and investments with family, as their advice proves valuable. Someone close may feel unsettled by your unpredictable behavior, so patience is needed. Romance feels uplifting and deeply comforting. At work, support and appreciation come easily. You may wish to tend to your mother’s needs, but urgent matters could delay that, causing mild frustration. A powerful emotional realization strengthens your bond with your spouse.\n\nStrong emotions are more stable today. While assertiveness runs high, staying grounded prevents conflict. Focus on practical priorities and steady progress rather than unnecessary arguments."
     },
     {
         name: "Taurus",
@@ -28,7 +28,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Reliable", "Patient", "Practical", "Devoted", "Responsible", "Stable"],
         weaknesses: ["Stubborn", "Possessive", "Uncompromising"],
         compatibility: "**Most Compatible:** Virgo, Capricorn, Cancer, Pisces.\n**Least Compatible:** Leo, Aquarius.",
-        horoscope: "Your energy levels remain high, making it a good day to plan finances with your spouse and think long-term. Avoid unnecessary involvement in others’ matters. The evening is ideal for romance and leisure. While entertainment is favored, professionals should carefully review business decisions. You’ll finally find time to complete tasks you’ve been postponing. Your partner’s support and affection remind you of their importance in your life.\n\nStrong emotions demand a steady and realistic approach. Practical thinking works best today—keep things simple, grounded, and connected to tangible results."
+        horoscope: "Peace of mind becomes a priority as you choose to release unnecessary worries. A fresh financial agreement brings new income, and house-related matters look favorable. Avoid forming opinions about your partner based on others’ words. Work progress may feel slow, creating mild tension. Socializing with a colleague may not be as fulfilling as expected. Overindulgence in food or drinks could slightly affect health.\n\nEmotions feel intense but manageable. Staying realistic and grounded helps you navigate tasks smoothly. Physical connection with nature brings clarity and balance."
     },
     {
         name: "Gemini",
@@ -41,7 +41,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Gentle", "Affectionate", "Curious", "Adaptable", "Ability to learn quickly"],
         weaknesses: ["Nervous", "Inconsistent", "Indecisive"],
         compatibility: "**Most Compatible:** Libra, Aquarius, Aries, Leo.\n**Least Compatible:** Virgo, Pisces.",
-        horoscope: "This is a favorable day to restart health routines. Property-related investments look promising. Time spent with friends brings enjoyment and sparks travel ideas. Love matters may feel complicated, so avoid impulsive reactions. Embracing new work techniques boosts efficiency and draws attention to your unique style. You may choose solitude for reflection, with many thoughts running through your mind. A past issue may surface and slightly upset your spouse.\n\nYou’re filled with strong motivation today. Use this drive to tackle career goals and practical concerns rather than feeling overwhelmed by responsibilities."
+        horoscope: "Workplace pressure and domestic disagreements may affect your focus today. Financially, a new deal brings inflow. Home-related tasks move smoothly. Keep romantic matters private and maintain composure when dealing with senior colleagues. Spiritual reading or quiet reflection helps reduce stress. A spouse’s health concern may interrupt your schedule, but you manage the situation effectively.\n\nYou’re filled with drive and determination. Channel this energy into meaningful goals rather than frustration. Handling practical responsibilities brings noticeable progress."
     },
     {
         name: "Cancer",
@@ -54,7 +54,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Tenacious", "Highly imaginative", "Loyal", "Emotional", "Sympathetic", "Persuasive"],
         weaknesses: ["Moody", "Pessimistic", "Suspicious", "Manipulative", "Insecure"],
         compatibility: "**Most Compatible:** Scorpio, Pisces, Taurus, Virgo.\n**Least Compatible:** Aries, Libra.",
-        horoscope: "Attending a social gathering lifts your mood. You gain insight into saving and managing money wisely. Concerns over your daughter’s health may cause worry—your care and emotional support aid her recovery. Romantic realities may require acceptance. Professionally, circumstances work in your favor. Though busy, you’ll find time in the evening for activities you enjoy. Married life may feel routine—introducing small changes helps revive excitement.\n\nEmotional balance is essential today. Ground yourself early and approach tasks with sensitivity and determination. Handling practical matters head-on brings stability."
+        horoscope: "Mental stress may interfere with happiness, but engaging your mind through reading or learning helps restore balance. Investment opportunities appear tempting but may not deliver expected returns—avoid haste. Family and children take center stage. Romance feels pleasant yet short-lived. Professional dedication earns recognition, though pending tasks may demand extra evening hours. Time spent with your spouse brings relaxation.\n\nGrounding your emotions early is essential. Balance logic with sensitivity and tackle practical responsibilities decisively to regain stability."
     },
     {
         name: "Leo",
@@ -67,7 +67,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Creative", "Passionate", "Generous", "Warm-hearted", "Cheerful", "Humorous"],
         weaknesses: ["Arrogant", "Stubborn", "Self-centered", "Lazy", "Inflexible"],
         compatibility: "**Most Compatible:** Aries, Sagittarius, Gemini, Libra.\n**Least Compatible:** Taurus, Scorpio.",
-        horoscope: "A relaxed mood allows you to enjoy leisure. Business gains bring satisfaction and should be shared with family. Be mindful of your words, as harsh speech could disturb romantic harmony. Unexpected intellectual input from a colleague surprises you. Avoid pointless arguments, as they only drain your energy. A partner’s actions may disrupt plans—patience is key.\n\nIt’s time to deal with practical responsibilities you may have avoided. Use emotional intensity constructively and don’t let others influence decisions that don’t align with your goals."
+        horoscope: "Energy remains high, but extra attention is required for children’s health, which may involve expenses. Later in the day, you prefer relaxing with family. Romance feels light and refreshing, enhancing emotional warmth. Work progresses smoothly. Students may waste time on distractions, so discipline is needed. Married life feels especially cozy and affectionate.\n\nStrong emotions push you to face practical realities. Use your assertiveness wisely and avoid letting others dictate your direction."
     },
     {
         name: "Virgo",
@@ -80,7 +80,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Loyal", "Analytical", "Kind", "Hardworking", "Practical"],
         weaknesses: ["Shyness", "Worry", "Overly critical of self and others", "All work and no play"],
         compatibility: "**Most Compatible:** Taurus, Capricorn, Cancer, Scorpio.\n**Least Compatible:** Gemini, Sagittarius.",
-        horoscope: "Minor tensions and differing opinions may cause irritation. Avoid investments today. Sharing concerns with family lightens your emotional load, though ego may hold you back—open communication helps. Persistence brings favorable results. Influential interactions offer valuable ideas. Use time wisely while also honoring family commitments. Passion in married life feels intense and fulfilling.\n\nEmotions run strong today. Stay organized and grounded to make the most of your energy. Avoid impulsive reactions if challenged."
+        horoscope: "Consistent effort and family support bring encouraging outcomes. Savings may be used today, though expenses could dampen your mood. An enjoyable evening with friends lightens spirits. You may feel distant from love, but this phase is temporary. At work, someone you once mistrusted proves supportive. Honest communication with your partner clears emotional tension. Married life offers relief after recent strain.\n\nHeightened emotions require structure and focus. Staying organized helps you accomplish tasks efficiently without reacting impulsively."
     },
     {
         name: "Libra",
@@ -93,7 +93,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Cooperative", "Diplomatic", "Gracious", "Fair-minded", "Social"],
         weaknesses: ["Indecisive", "Avoids confrontations", "Will carry a grudge", "Self-pity"],
         compatibility: "**Most Compatible:** Gemini, Aquarius, Leo, Sagittarius.\n**Least Compatible:** Cancer, Capricorn.",
-        horoscope: "Sharing happiness enhances your health. Long-term investments look favorable. Your curiosity helps you form new friendships. Let go of minor resentments in love. Business matters progress smoothly, and travel yields positive outcomes. A quiet nighttime walk brings clarity. Efforts to improve married life exceed expectations.\n\nConfidence and emotional strength support your plans. Well-laid strategies begin showing results, pushing you closer to your goals."
+        horoscope: "A pleasant evening with your partner helps you unwind. Advice from your father proves useful at work. Children seek attention but bring happiness. Playful romance adds charm to the day. Be mindful not to overcommit to others at the expense of your responsibilities. Your competitive streak helps you succeed. Minor domestic irritations may arise during routine tasks.\n\nEmotional strength and courage guide your actions. Well-planned efforts move you closer to your goals with confidence."
     },
     {
         name: "Scorpio",
@@ -106,7 +106,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Resourceful", "Brave", "Passionate", "Stubborn", "A true friend"],
         weaknesses: ["Distrusting", "Jealous", "Secretive", "Violent"],
         compatibility: "**Most Compatible:** Cancer, Pisces, Virgo, Taurus.\n**Least Compatible:** Leo, Aquarius.",
-        horoscope: "A positive day for improving health habits. Stay calm at work—anger could affect job security. Loved ones visit, making the evening pleasant. Romance feels sweet but brief. Finish pending tasks before management notices. Seniors may reconnect with old friends. A romantic mood prevails, though minor health issues could surface.\n\nStay grounded and allow others to express themselves. Listening more than speaking brings clarity. Today’s outcomes reflect past actions—use this awareness wisely."
+        horoscope: "Optimism rises as hope blooms. Control spending and focus on essentials. Your innocent approach helps resolve family matters. Avoid forcefulness in romance. Career efforts may be rewarded through recognition or financial benefits. Leisure time may be spent unwinding digitally. Be cautious, as a partner’s actions could cause minor losses.\n\nStaying grounded and listening carefully to others brings balance. Outcomes today reflect past actions—use this insight constructively."
     },
     {
         name: "Sagittarius",
@@ -119,7 +119,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Generous", "Idealistic", "Great sense of humor"],
         weaknesses: ["Promises more than can deliver", "Very impatient", "Will say anything no matter how undiplomatic"],
         compatibility: "**Most Compatible:** Aries, Leo, Libra, Aquarius.\n**Least Compatible:** Virgo, Pisces.",
-        horoscope: "Determination helps you overcome a tricky situation. Financial gains arrive later in the day. Handle sensitive family matters tactfully, avoiding outside interference. Career changes you’ve considered may now be implemented. Construction or long-term work progresses well. A partner’s assertive side may feel uncomfortable—patience is required.\n\nFocus on organizing your surroundings and completing chores. Staying grounded boosts efficiency and accelerates progress."
+        horoscope: "Confidence fuels productivity despite a busy schedule. Financial concerns may trouble students planning to study abroad. A close relative offers support but seeks attention. Romance feels joyful and carefree. Job seekers must apply extra effort for results. Reading helps you relax, though family distractions may persist. Passionate moments strengthen your bond with your spouse.\n\nFocusing on organization and daily chores keeps you grounded. Emotional balance enhances efficiency and accelerates progress."
     },
     {
         name: "Capricorn",
@@ -132,7 +132,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Responsible", "Disciplined", "Self-control", "Good managers"],
         weaknesses: ["Know-it-all", "Unforgiving", "Condescending", "Expecting the worst"],
         compatibility: "**Most Compatible:** Taurus, Virgo, Scorpio, Pisces.\n**Least Compatible:** Aries, Libra.",
-        horoscope: "Fear may affect ambitions today—seeking guidance helps. Avoid lending money casually. Ensure consensus before altering home plans. Forgiveness strengthens romantic bonds. Superiors notice your work quality. Nostalgic activities bring joy. Marital life offers relief after recent strain.\n\nPhysical energy surges, encouraging emotional expression. Assert yourself calmly and confidently—inner strength speaks louder than aggression."
+        horoscope: "Important decisions may feel stressful, but they lead to long-term benefits. Travel may be tiring yet financially rewarding. Interfering in your partner’s affairs could spark tension—mutual respect avoids conflict. Romantic gestures uplift your mood. Gradual changes ensure success. Solitude appeals to you, and organizing your space brings calm. Married life feels deeply fulfilling.\n\nA surge of physical energy encourages emotional expression. Stand firm with quiet confidence rather than aggression."
     },
     {
         name: "Aquarius",
@@ -145,7 +145,7 @@ const HOROSCOPE_DATA = [
         strengths: ["Progressive", "Original", "Independent", "Humanitarian"],
         weaknesses: ["Runs from emotional expression", "Temperamental", "Uncompromising", "Aloof"],
         compatibility: "**Most Compatible:** Gemini, Libra, Aries, Sagittarius.\n**Least Compatible:** Taurus, Scorpio.",
-        horoscope: "Ambitions may feel influenced by fear—thoughtful advice brings clarity. Savings made today prove useful later. Children require attention yet offer emotional support. Love takes a serious turn with discussions about commitment. Work responsibilities increase, but personal time remains available. Romance with your partner feels rewarding.\n\nYour practical approach shines today. A strong inner drive supports completing detailed and overdue tasks efficiently."
+        horoscope: "High energy and enthusiasm push you to seize opportunities. Financial constraints may limit savings. Your partner seeks consideration—listening helps preserve harmony. Romantic feelings are mutual. Postpone new projects and expenses. Seeking advice from experienced individuals proves beneficial. Married life brings emotional satisfaction.\n\nYour practical mindset helps you clear pending tasks. Strong determination supports steady and efficient progress."
     },
     {
         name: "Pisces",
@@ -158,6 +158,6 @@ const HOROSCOPE_DATA = [
         strengths: ["Compassionate", "Artistic", "Intuitive", "Gentle", "Wise", "Musical"],
         weaknesses: ["Fearful", "Overly trusting", "Sad", "Desire to escape reality"],
         compatibility: "**Most Compatible:** Cancer, Scorpio, Taurus, Capricorn.\n**Least Compatible:** Gemini, Sagittarius.",
-        horoscope: "You feel calm and content today. Finances remain stable, but avoid unnecessary spending. It’s a good day to complete household tasks. Emotional understanding strengthens your bond with your partner. Work continues smoothly even in your absence. Children stay active—ensure their safety. Married life reveals its brighter side.\n\nPractical thinking is essential today. Stay focused on collective efforts and contribute where needed. Connecting with nature restores balance."
+        horoscope: "Letting go of stubbornness improves harmony. Investments are favorable with proper guidance. Positive developments at home bring joy to the entire family. A sweet message lifts your spirits. Professional efforts pay off in unexpected ways. Solitude and personal interests help you recharge. Emotional fulfillment flows easily in married life.\n\nStaying practical and grounded keeps you aligned with group energy. Connecting with nature restores balance and clarity."
     }
 ];
