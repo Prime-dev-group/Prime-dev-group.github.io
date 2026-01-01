@@ -16,7 +16,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Impatient", "Moody", "Short-tempered", "Impulsive", "Aggressive"],
         "compatibility": "**Most Compatible:** Leo, Sagittarius, Gemini, Aquarius.\n**Least Compatible:** Cancer, Capricorn.",
         "horoscope": "Today feels hopeful, but don’t let excitement push you into rushed decisions. Business or financial matters related to foreign connections need extra caution. Spending time with family or close friends lifts your mood. Romance may feel tense, so patience is required. Stay focused, as distractions can waste valuable time. Interference from your spouse’s relatives may slightly affect marital harmony.\n\nYou may feel stretched between work and social commitments. Ask for help if needed—trying to handle everything alone will only exhaust you.",
-        "yearly_forecast": "**2026 Overview:** The year 2026 brings important planetary transits for Aries.\n\n**Health:** According to the Aries Horoscope 2026, the year will be average in terms of health for Aries natives. The transit of Saturn in the twelfth house from the Moon sign indicates the onset of Sade Sati...\n\n**Career:** According to the Aries Horoscope 2026, the year might not fully reward Aries natives in proportion to the efforts...\n\n**Finance:** According to the Aries Horoscope 2026, the financial life of Aries natives will be better than average...\n\n**Love:** The year 2026 can be better than average for Aries natives in terms of love life...\n\n**Family:** According to the Aries Horoscope 2026, the year may be slightly challenging in terms of family life..."
+        "yearly_forecast": "**2026 Overview:** A powerful year for inner reflection and professional growth. Planetary transits bring unexpected opportunities. Focus on self-analysis to prepare for big transformations.\n\n**Love:** Relationships deepen through shared activities. Passion is high, but communication is crucial to avoid misunderstandings.\n\n**Career:** Immense opportunities await. Networking and seizing unexpected offers will lead to success.\n\n**Health:** Prioritize sleep and stress management. Improved productivity depends on balancing your energy.\n\n**Education:** An above-average year. Success in competitive exams is likely. Students in tourism or media will thrive.\n\n**Family & Travel:** Domestic life may see mixed results; use logic to resolve conflicts. Long-distance travel brings mental peace."
     },
     {
         "name": "Taurus",
@@ -30,7 +30,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Stubborn", "Possessive", "Uncompromising"],
         "compatibility": "**Most Compatible:** Virgo, Capricorn, Cancer, Pisces.\n**Least Compatible:** Leo, Aquarius.",
         "horoscope": "Focus on your health by maintaining discipline in food and exercise. Legal or money-related matters may work in your favor. Emotional understanding improves your relationship if communication stays honest. Be mindful of unnecessary flirting. Work progress may feel slow, causing mild stress. A nostalgic moment at home may remind you of childhood. Your spouse could show a moody side—handle it calmly.",
-        "yearly_forecast": "**2026 Overview:** The year 2026 brings important planetary transits for Taurus...\n\n**Health:** According to the Taurus Horoscope 2026...\n\n**Career:** According to the Taurus Horoscope 2026...\n\n**Finance:** From a career perspective...\n\n**Love:** The year 2026 will be an average one...\n\n**Family:** According to the Taurus Horoscope 2026..."
+        "yearly_forecast": "**2026 Overview:** A spectacular year of stability and prosperity. Fresh opportunities in personal life and finances emerge.\n\n**Love:** Meaningful connections flourish. It's a time to build a partnership that feels like home, moving away from fleeting flings.\n\n**Career:** Financially prosperous! Jupiter boosts income and lifestyle, but caution against overspending is advised. Investments look promising.\n\n**Health:** Watch for digestive issues; proactive check-ups are key. Mental peace comes from a stable routine.\n\n**Education:** Academic performance peaks early in the year. High school students may relocate for better opportunities.\n\n**Family & Travel:** Family life requires patience due to dynamic shifts. Step out of your comfort zone—cultural trips are transformative."
     },
     {
         "name": "Gemini",
@@ -44,7 +44,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Nervous", "Inconsistent", "Indecisive"],
         "compatibility": "**Most Compatible:** Libra, Aquarius, Aries, Leo.\n**Least Compatible:** Virgo, Pisces.",
         "horoscope": "Sharing happiness with others improves your mood and health. Avoid long-term investments today. Children may test your patience, but encouragement will help them grow. A serious discussion about commitment may arise—think carefully before deciding. Distance yourself from people who waste your time. Married life feels affectionate and supportive.",
-        "yearly_forecast": "**2026 Overview:** A transformative year with significant planetary shifts...\n\n**Career:** Better than average year...\n\n**Finance:** Much better than previous years...\n\n**Love:** Favorable year for love life...\n\n**Business:** Average to better results...\n\n**Education & Health:** Mixed results requiring dedication..."
+        "yearly_forecast": "**2026 Overview:** One of your luckiest years! Major developments in love and career await as planetary shifts spark independence.\n\n**Love:** New, meaningful relationships form early. Intellectual connection is vital—if the mind isn't engaged, the heart won't follow.\n\n**Career:** Major professional development is on the horizon. Your unique voice and ideas are your greatest assets.\n\n**Health:** Balance nervous energy with breathwork or yoga. Mental wellness is as important as physical fitness this year.\n\n**Education:** Excellent for competitive exams. Creativity is high, but managing time is essential for success.\n\n**Family & Travel:** Married life flourishes. Travel for work and exploration is favored—consider visiting Italy or Scotland to feed your curiosity."
     },
     {
         "name": "Cancer",
@@ -58,7 +58,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Moody", "Pessimistic", "Suspicious", "Manipulative", "Insecure"],
         "compatibility": "**Most Compatible:** Scorpio, Pisces, Taurus, Virgo.\n**Least Compatible:** Aries, Libra.",
         "horoscope": "Avoid negative thinking, as it affects both your mind and body. Financially, the day remains strong with chances to earn. Unexpected responsibilities may make you feel tired. Love brings emotional warmth, though the day may feel mixed overall. Your partner helps you experience deeper emotional connection.",
-        "yearly_forecast": "**2026 Overview:** The year 2026 brings important planetary transits for Cancer..."
+        "yearly_forecast": "**2026 Overview:** A transformative year. Career struggles fade, leading to a lucky cycle when Jupiter enters your sign mid-year.\n\n**Love:** Early challenges lead to blossoming romance. Jupiter boosts joy in family and secure bonding.\n\n**Career:** A great period for finding work or launching projects. Trust your gut—your visibility and influence are increasing.\n\n**Health:** Vitality is good initially, but avoid overworking. Support your emotional well-being with nutrient-rich foods.\n\n**Education:** Self-discovery is key. Admissions to prestigious universities are possible, but discipline is required.\n\n**Family & Travel:** Focus on domestic peace early in the year. Travel for business expansion is likely."
     },
     {
         "name": "Leo",
@@ -72,7 +72,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Arrogant", "Stubborn", "Self-centered", "Lazy", "Inflexible"],
         "compatibility": "**Most Compatible:** Aries, Sagittarius, Gemini, Libra.\n**Least Compatible:** Taurus, Scorpio.",
         "horoscope": "Avoid tiring travel today as your energy may feel low. Financial gains are possible if you act smartly. Spending time with children lifts your spirits. Romance keeps your mood high, and appreciation at work boosts confidence. Your partner may surprise you with affection.",
-        "yearly_forecast": "**2026 Overview:** The year 2026 brings important planetary transits for Leo..."
+        "yearly_forecast": "**2026 Overview:** A fulfilled journey from slow starts to mid-year popularity. Prepare for personal reinvention.\n\n**Love:** Excellent shape early in the year. It's an ideal time to gain clarity and strengthen bonds with your partner.\n\n**Career:** Partnerships drive success. Teamwork is your golden ticket, so share the spotlight to achieve your big goals.\n\n**Health:** Protect your heart health with cardio. Seasonal minor issues may arise, but overall vitality is strong.\n\n**Education:** A year of development and leadership in potential student roles. Good results are expected.\n\n**Family & Travel:** Family feels secure and harmonious. You crave luxury with adventure—grand travel memories await."
     },
     {
         "name": "Virgo",
@@ -86,7 +86,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Shyness", "Worry", "Overly critical of self and others", "All work and no play"],
         "compatibility": "**Most Compatible:** Taurus, Capricorn, Cancer, Scorpio.\n**Least Compatible:** Gemini, Sagittarius.",
         "horoscope": "Pay attention to your health and avoid unhealthy habits. Financial losses are possible if you are careless. Family time helps reduce stress. Be cautious in friendships, as misunderstandings may arise. Your partner supports your ideas, but wasting time on unimportant things may cause issues.",
-        "yearly_forecast": "**2026 Overview:** The year 2026 brings important planetary transits for Virgo..."
+        "yearly_forecast": "**2026 Overview:** Important lessons and big wins. Eclipses shake up relationships, challenging you to find joy in your inner world.\n\n**Love:** Commitment is tested. Whether single or attached, focus on relationships that support your personal growth and joy.\n\n**Career:** Saturn tests patience, but consistent effort pays off. Expect recognition for your efficiency in the second half.\n\n**Health:** Avoid overworking your digestive system. Schedule lighter meals and ensure you take mental breaks.\n\n**Education:** Hard work is needed after mid-year. Organization is your superpower and will lead to success.\n\n**Family & Travel:** Family life may need extra effort. You prefer organized trips—traditional festivals will delight you."
     },
     {
         "name": "Libra",
@@ -100,7 +100,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Indecisive", "Avoids confrontations", "Will carry a grudge", "Self-pity"],
         "compatibility": "**Most Compatible:** Gemini, Aquarius, Leo, Sagittarius.\n**Least Compatible:** Cancer, Capricorn.",
         "horoscope": "Avoid unpredictable behavior in your relationship today. Financial help from a friend brings relief. Family and friends offer emotional support. Be patient with your partner to prevent misunderstandings. You’ll find time for yourself despite a busy schedule.",
-        "yearly_forecast": "**2026 Overview:** Big changes and career expansion mark 2026..."
+        "yearly_forecast": "**2026 Overview:** Big changes and new horizons! Adventure and travel call in the first half, followed by career expansion.\n\n**Love:** March turns up the heat. Drop illusions and communicate clearly. Boundaries will bring you closer to true intimacy.\n\n**Career:** A major level-up awaits. A new role aligning with your values is likely, especially after June.\n\n**Health:** Hydration is key for skin and kidney health. Recovery from past ailments looks very favorable.\n\n**Education:** Collaborative learning brings success. Early months are ideal for educational planning.\n\n**Family & Travel:** Family bonds strengthen after mid-year. Travel for growth is indicated."
     },
     {
         "name": "Scorpio",
@@ -114,7 +114,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Distrusting", "Jealous", "Secretive", "Violent"],
         "compatibility": "**Most Compatible:** Cancer, Pisces, Virgo, Taurus.\n**Least Compatible:** Leo, Aquarius.",
         "horoscope": "Rest is important today, as mental pressure has been high. Control spending and buy only what you need. Keep your temper in check to avoid family tension. Learning new things comes easily. Make your partner feel valued with small thoughtful gestures.",
-        "yearly_forecast": "**2026 Overview:** A dynamic mix of opportunities..."
+        "yearly_forecast": "**2026 Overview:** A dynamic mix of opportunities. Cosmic shifts alter your course, bringing meaningful growth early in the year.\n\n**Love:** Singles might find someone special early. Existing relationships strengthen, with serious commitments like marriage possible.\n\n**Career:** Education and new skills are highlighted. It's a fantastic year to learn something that adds value to your toolkit.\n\n**Health:** Generally robust physical health. Minor ailments will be short-lived, so stay active.\n\n**Education:** Hard work pays off for exam takers. Travel for education may bring clarity.\n\n**Family & Travel:** Harmony prevails in the first half. Travel with friends or family is encouraged."
     },
     {
         "name": "Sagittarius",
@@ -128,7 +128,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Promises more than can deliver", "Very impatient", "Will say anything no matter how undiplomatic"],
         "compatibility": "**Most Compatible:** Aries, Leo, Libra, Aquarius.\n**Least Compatible:** Virgo, Pisces.",
         "horoscope": "Social outings and travel keep your mood upbeat. Financial opportunities may arise. Balance fun and responsibilities carefully. Love feels deeply fulfilling today. Travel brings positive experiences, and your partner may surprise you pleasantly.",
-        "yearly_forecast": "**2026 Overview:** The year 2026 brings important planetary transits for Sagittarius..."
+        "yearly_forecast": "**2026 Overview:** A supportive start with Jupiter aiding plans. You must balance your free spirit with Saturn's demand for discipline.\n\n**Love:** Professional life may distract initially, but Venus brings rewards later. Stability becomes more attractive than fleeting fun.\n\n**Career:** Mixed outcomes lead to success if you persist. Hard work is non-negotiable, but new avenues open after May.\n\n**Health:** Optimistic outlook, but watch for mental pressure. Meditation or yoga will help keep your fire balanced.\n\n**Education:** Unconventional fields call to you. Internships abroad will expand your horizons.\n\n**Family & Travel:** Mutual support strengthens family bonds. Your adventurous spirit will love international festivals."
     },
     {
         "name": "Capricorn",
@@ -142,7 +142,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Know-it-all", "Unforgiving", "Condescending", "Expecting the worst"],
         "compatibility": "**Most Compatible:** Taurus, Virgo, Scorpio, Pisces.\n**Least Compatible:** Aries, Libra.",
         "horoscope": "Health-related discomfort may bother you today. Financial gains may fall short of expectations. Family responsibilities increase pressure. Focus on completing pending work. Your partner’s lack of energy may affect your plans.",
-        "yearly_forecast": "**2026 Overview:** Big transitions in every area..."
+        "yearly_forecast": "**2026 Overview:** Big transitions in every area. The pressure gives way to evolution and financial refinement.\n\n**Love:** Social expansion brings joy. Existing partnerships flourish, and singles may find stable, long-term prospects.\n\n**Career:** Financial growth is the focus. Saturn helps you solidify plans, and collaboration becomes your path to the top.\n\n**Health:** Strengthen your bones with Vitamin D and resistance training to match your strong ambition.\n\n**Education:** Consistent success. Good for long-term goals and certifications due to strong concentration.\n\n**Family & Travel:** Good news from maternal relatives is likely. You prefer structured trips—relaxing or hiking adventures fit your style."
     },
     {
         "name": "Aquarius",
@@ -156,7 +156,7 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Runs from emotional expression", "Temperamental", "Uncompromising", "Aloof"],
         "compatibility": "**Most Compatible:** Gemini, Libra, Aries, Sagittarius.\n**Least Compatible:** Taurus, Scorpio.",
         "horoscope": "You’ll find time to focus on health and appearance. Loan or financial matters may move forward. Friends offer support. Relationship discussions may turn serious—think carefully before committing. Work productivity stays strong, and you make time for yourself.",
-        "yearly_forecast": "**2026 Overview:** A year to shine! Significant growth in career and finances..."
+        "yearly_forecast": "**2026 Overview:** A year to shine! Significant growth in career and finances. The first half is for planning; the second brings breakthroughs.\n\n**Love:** Communication is your lifeline. Long-distance or online connections could surprise you. Patience is key in matters of the heart.\n\n**Career:** Saturn gives you control over your path, while Jupiter offers expansion. Property investments and financial gains look favorable.\n\n**Health:** Improve circulation with movement breaks. Consistent activity keeps your innovative mind sharp.\n\n**Education:** Excellent prospects for research and higher education, especially after May.\n\n**Family & Travel:** Family tension fades after mid-year. Professional changes in spring might inspire travel."
     },
     {
         "name": "Pisces",
@@ -170,6 +170,6 @@ const HOROSCOPE_DATA = [
         "weaknesses": ["Fearful", "Overly trusting", "Sad", "Desire to escape reality"],
         "compatibility": "**Most Compatible:** Cancer, Scorpio, Taurus, Capricorn.\n**Least Compatible:** Gemini, Sagittarius.",
         "horoscope": "Focus on self-care and emotional balance today. Financial advice from elders proves helpful. Visitors bring warmth to the evening. Work requires smart handling. Spending time with children brings meaningful realizations. Your partner may feel neglected—reassure them.",
-        "yearly_forecast": "**2026 Overview:** Introspection and rebirth..."
+        "yearly_forecast": "**2026 Overview:** Introspection and rebirth. As Saturn prepares to leave, you emerge more grounded, mature, and spiritually connected.\n\n**Love:** Relationships take on a deeper meaning. You seek soul connections, and casual dating loses its appeal.\n\n**Career:** Strategic planning wins the race. It's a year to balance your dreams with reality. Artistic and healing professions continue to be favored.\n\n**Health:** Support your immunity with herbal teas and adaptogens. Your sensitive nature needs extra care during this transition.\n\n**Education:** Success in creative fields. Studying abroad or travel-related subjects is highly favored.\n\n**Family & Travel:** Manage minor family tensions with communication. Travel for relaxation is key—beaches call to your water spirit."
     }
 ];
