@@ -12,6 +12,42 @@
     --font-heading: 'Cinzel', serif;
     --font-body: 'Inter', sans-serif;
     --font-accent: 'Playfair Display', serif;
+
+    /* Default Modal Vars */
+    --modal-bg: rgba(20, 20, 35, 0.95);
+    --modal-text: #e0e0e0;
+
+    --title-gradient-start: #ffffff;
+}
+
+/* Light Mode (Solar) */
+body.theme-solar {
+    --bg-color: #fdf6e3;
+    --bg-gradient: linear-gradient(135deg, #fdf6e3 0%, #fae1dd 100%);
+    --text-primary: #2c3e50;
+    --text-secondary: #586e75;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(44, 62, 80, 0.1);
+    --card-hover: rgba(255, 255, 255, 0.8);
+
+    --modal-bg: rgba(255, 255, 255, 0.98);
+    --modal-text: #2c3e50;
+
+    --accent-gold: #d4a017;
+    --title-gradient-start: #9d4edd;
+}
+
+/* High Contrast Mode (Lunar) */
+body.theme-lunar {
+    --bg-color: #000000;
+    --bg-gradient: radial-gradient(circle, #000000 0%, #1a1a1a 100%);
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --glass-bg: rgba(0, 0, 0, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --modal-bg: #000000;
+    --modal-text: #ffffff;
+    --title-gradient-start: #ffffff;
 }
 
 * {
@@ -61,7 +97,7 @@ body {
 .title {
     font-family: var(--font-heading);
     font-size: 3.5rem;
-    background: linear-gradient(to right, #fff, var(--accent-gold));
+    background: linear-gradient(to right, var(--title-gradient-start), var(--accent-gold));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -309,7 +345,7 @@ body.modal-open {
 }
 
 .modal-content {
-    background: rgba(20, 20, 35, 0.95);
+    background: var(--modal-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--accent-gold);
     border-radius: 24px;
@@ -361,7 +397,7 @@ body.modal-open {
 .modal-body {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #e0e0e0;
+    color: var(--modal-text);
     text-align: center;
     min-height: 200px;
     /* Prevent layout jump */
@@ -489,7 +525,7 @@ body.modal-open {
 .keyword-tag {
     background: rgba(157, 78, 221, 0.2);
     border: 1px solid var(--accent-purple);
-    color: #fff;
+    color: var(--text-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -497,7 +533,7 @@ body.modal-open {
 
 .profile-traits {
     font-style: italic;
-    color: #d0d0d0;
+    color: var(--text-secondary);
 }
 
 /* Yearly Forecast Styles */
@@ -512,7 +548,7 @@ body.modal-open {
 .yearly-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: #e0e0e0;
+    color: var(--modal-text);
     white-space: pre-wrap;
     /* Preserve formatting */
     text-align: justify;
@@ -530,29 +566,13 @@ body.modal-open {
 
 /* Profile Container - Scrollable like Yearly Forecast */
 .profile-container {
-    max-height: 300px;
-    overflow-y: auto;
+    /* max-height: 300px;  Removed to fix double scrollbar */
+    /* overflow-y: auto;   Removed to fix double scrollbar */
     padding-right: 1rem;
     text-align: left;
-
-    /* Scrollbar Styling */
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-gold) var(--glass-bg);
 }
 
-.profile-container::-webkit-scrollbar {
-    width: 6px;
-}
 
-.profile-container::-webkit-scrollbar-track {
-    background: var(--glass-bg);
-    border-radius: 3px;
-}
-
-.profile-container::-webkit-scrollbar-thumb {
-    background-color: var(--accent-gold);
-    border-radius: 3px;
-}
 
 /* Profile Section Styling */
 .profile-section {
@@ -561,7 +581,7 @@ body.modal-open {
 }
 
 .profile-section h4 {
-    color: var(--accent-color);
+    color: var(--accent-gold);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -984,7 +1004,7 @@ body.modal-open {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    background: linear-gradient(to right, #fff, #a5a5a5);
+    background: linear-gradient(to right, var(--title-gradient-start), var(--text-secondary));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

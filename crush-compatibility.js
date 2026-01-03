@@ -120,6 +120,7 @@ function renderSavedResults() {
 
     if (results.length === 0) {
         savedSection.classList.add('hidden');
+        savedList.innerHTML = ''; // Ensure list is cleared
         return;
     }
 
@@ -152,7 +153,7 @@ function renderSavedResults() {
     // Add delete event listeners
     savedList.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const id = parseInt(e.target.dataset.id);
+            const id = parseInt(e.currentTarget.dataset.id);
             deleteResult(id);
             renderSavedResults();
             showShareNotification('Result deleted', true);

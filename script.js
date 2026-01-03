@@ -111,7 +111,7 @@ function openModal(sign) {
     const modalCompatibility = document.getElementById('modal-compatibility');
     // Parse bold markdown for compatibility
     let compatibilityText = sign.compatibility || 'Compatibility info not available.';
-    compatibilityText = compatibilityText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    compatibilityText = compatibilityText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
     modalCompatibility.innerHTML = compatibilityText;
 
     // Populate Yearly Tab
@@ -237,12 +237,24 @@ async function handleShare(method) {
         text = currentSign.horoscope;
         icon = currentSign.icon;
     } else if (activeTab === 'yearly') {
-        title = `${currentSign.name} 2025 Forecast`;
-        text = currentSign.yearly_forecast?.substring(0, 200) + '...';
+        title = `${currentSign.name} 2026 Forecast`;
+        // Extract only the 2026 Overview (first section before double newline)
+        if (currentSign.yearly_forecast) {
+            const parts = currentSign.yearly_forecast.split('\n\n');
+            text = parts[0]; // Gets the "**2026 Overview:** ..." part
+        } else {
+            text = 'Forecast not available.';
+        }
         icon = currentSign.icon;
     } else {
         title = `${currentSign.name} Personality`;
-        text = currentSign.traits;
+        // Pass object for structured image generation & full text sharing
+        text = {
+            traits: currentSign.traits,
+            strengths: Array.isArray(currentSign.strengths) ? currentSign.strengths.join(', ') : currentSign.strengths,
+            weaknesses: Array.isArray(currentSign.weaknesses) ? currentSign.weaknesses.join(', ') : currentSign.weaknesses,
+            compatibility: currentSign.compatibility
+        };
         icon = currentSign.icon;
     }
 
