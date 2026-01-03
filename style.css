@@ -62,11 +62,12 @@ body {
     font-family: var(--font-heading);
     font-size: 3.5rem;
     background: linear-gradient(to right, #fff, var(--accent-gold));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+
 }
 
 .subtitle {
@@ -296,6 +297,12 @@ body {
     padding: 1rem;
 }
 
+/* Body fix for double scrollbar */
+html.modal-open,
+body.modal-open {
+    overflow: hidden !important;
+}
+
 .modal.active {
     opacity: 1;
     visibility: visible;
@@ -313,6 +320,10 @@ body {
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 0 50px rgba(255, 215, 0, 0.1);
+    max-height: 90vh;
+    /* Limit height to viewport */
+    display: flex;
+    flex-direction: column;
 }
 
 .modal.active .modal-content {
@@ -354,6 +365,28 @@ body {
     text-align: center;
     min-height: 200px;
     /* Prevent layout jump */
+    overflow-y: auto;
+    /* Enable scrolling */
+    padding-right: 10px;
+    /* Space for scrollbar */
+
+    /* Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) var(--glass-bg);
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: var(--glass-bg);
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: var(--accent-gold);
+    border-radius: 3px;
 }
 
 /* Tabs */
@@ -468,29 +501,12 @@ body {
 }
 
 /* Yearly Forecast Styles */
+/* Yearly Forecast Styles */
 .yearly-forecast-container {
-    max-height: 300px;
-    overflow-y: auto;
+    /* max-height removed to use modal-body scroll */
+    /* overflow-y removed */
     padding-right: 1rem;
     text-align: left;
-
-    /* Scrollbar Styling */
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-gold) var(--glass-bg);
-}
-
-.yearly-forecast-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.yearly-forecast-container::-webkit-scrollbar-track {
-    background: var(--glass-bg);
-    border-radius: 3px;
-}
-
-.yearly-forecast-container::-webkit-scrollbar-thumb {
-    background-color: var(--accent-gold);
-    border-radius: 3px;
 }
 
 .yearly-text {
@@ -499,13 +515,15 @@ body {
     color: #e0e0e0;
     white-space: pre-wrap;
     /* Preserve formatting */
+    text-align: justify;
 }
 
 .yearly-text strong {
     color: var(--accent-gold);
     font-weight: 700;
     font-size: 1.1em;
-    display: inline-block; /* Allows spacing to work better if needed, but safer inline */
+    display: inline-block;
+    /* Allows spacing to work better if needed, but safer inline */
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
@@ -794,6 +812,7 @@ body {
 }
 
 /* Laptops and Desktops (1025px to 1440px) */
+/* Laptops and Desktops (1025px to 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
     .app-container {
         max-width: 1000px;
@@ -803,6 +822,200 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Know More Button in Modal */
+.know-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.know-more-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Characteristics Page Styles */
+.back-link {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+.result-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #a5a5a5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.result-text {
+    font-family: 'Inter', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.result-text p {
+    margin-bottom: 1.5rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Smart TVs and Large Screens (1441px and up) */
+@media (min-width: 1441px) {
+    html {
+        font-size: 18px;
+        /* Scale up base font size for distance viewing */
+    }
+
+    .app-container {
+        max-width: 1600px;
+        padding: 4rem;
+    }
+
+    .title {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .zodiac-card {
+        padding: 3rem 2rem;
+    }
+
+    .zodiac-icon {
+        font-size: 4rem;
+    }
+
+    .zodiac-name {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        max-width: 800px;
+        padding: 4rem;
+    }
+
+    .close-btn {
+        font-size: 3rem;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+
+/* Know More Button in Modal */
+.know-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.know-more-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Characteristics Page Styles */
+.back-link {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+.result-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #a5a5a5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.result-text {
+    font-family: 'Inter', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.result-text p {
+    margin-bottom: 1.5rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.zodiac-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 
 /* Smart TVs and Large Screens (1441px and up) */
 @media (min-width: 1441px) {

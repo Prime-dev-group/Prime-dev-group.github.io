@@ -3,3 +3,7 @@
 
 # Scripts and generated data
 scripts/
+
+# Python files
+*.py
+__pycache__/

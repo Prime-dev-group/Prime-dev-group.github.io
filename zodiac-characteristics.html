@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac Characteristics - Astromage</title>
+    <meta name="description" content="Detailed personality profile and common characteristics for your zodiac sign.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <h1 class="title">Astromage</h1>
+            <p class="subtitle">Deep Dive into Personality</p>
+        </header>
+
+        <section class="calculator-container glass-panel">
+            <a href="index.html" class="back-link">← Back to Horoscope</a>
+
+            <div id="loading" class="loading">Loading characteristics...</div>
+
+            <div id="content" class="hidden">
+                <h2 id="sign-title" class="result-title"></h2>
+                <div id="characteristics-text" class="result-text" style="text-align: left; line-height: 1.8;"></div>
+            </div>
+            <div id="error-message" class="hidden" style="color: #ff6b6b; text-align: center; margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="english-common.json"></script>
+    <script src="characteristics.js"></script>
+    <script src="theme.js"></script>
+    <script>
+        // Initialize particles
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80 },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                "move": { "enable": true, "speed": 1 }
+            },
+            "interactivity": {
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+            }
+        });
+    </script>
+</body>
+
+</html>

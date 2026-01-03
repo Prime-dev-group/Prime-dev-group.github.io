@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearly Horoscope 2026 - Astromage</title>
+    <meta name="description" content="Detailed 2026 yearly horoscope predictions for your zodiac sign.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <h1 class="title">Astromage</h1>
+            <p class="subtitle">2026 Yearly Forecast</p>
+        </header>
+
+        <section class="calculator-container glass-panel">
+            <a href="index.html" class="back-link">← Back to Horoscope</a>
+
+            <div id="loading" class="loading">Loading forecast...</div>
+
+            <h2 id="sign-title" class="result-title"></h2>
+
+            <div id="details-grid" class="zodiac-grid hidden">
+                <!-- Tiles will be populated by JS -->
+            </div>
+
+            <div id="error-message" class="hidden" style="color: #ff6b6b; text-align: center; margin-top: 20px;"></div>
+        </section>
+
+        <!-- Detail Modal -->
+        <div id="details-modal" class="modal hidden">
+            <div class="modal-content glass-panel" style="max-width: 600px;">
+                <button class="close-btn" aria-label="Close">&times;</button>
+                <div class="modal-header">
+                    <div class="sign-icon" id="modal-icon"></div>
+                    <h2 id="modal-category-title"></h2>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-content-text" class="yearly-text"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="yearly-2026-data.js"></script>
+    <script src="yearly-details.js"></script>
+    <script src="theme.js"></script>
+    <script>
+        // Initialize particles
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80 },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                "move": { "enable": true, "speed": 1 }
+            },
+            "interactivity": {
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+            }
+        });
+    </script>
+</body>
+
+</html>

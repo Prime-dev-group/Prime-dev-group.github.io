@@ -71,6 +71,20 @@ function openModal(sign) {
     modalPlanet.textContent = sign.ruling_planet || 'Unknown';
     modalTraits.textContent = sign.traits || 'No traits available.';
 
+    // Remove existing "Know More" button if any (to prevent duplicates on re-open)
+    const existingBtn = document.getElementById('know-more-btn');
+    if (existingBtn) existingBtn.remove();
+
+    // Create "Know More" button
+    const knowMoreBtn = document.createElement('a');
+    knowMoreBtn.id = 'know-more-btn';
+    knowMoreBtn.href = `zodiac-characteristics.html?sign=${sign.name}`;
+    knowMoreBtn.className = 'know-more-btn';
+    knowMoreBtn.textContent = 'Know More';
+
+    // Append after traits
+    modalTraits.parentNode.insertBefore(knowMoreBtn, modalTraits.nextSibling);
+
     // Populate Strengths
     const modalStrengths = document.getElementById('modal-strengths');
     modalStrengths.innerHTML = '';
@@ -110,6 +124,20 @@ function openModal(sign) {
 
     modalYearlyText.innerHTML = formattedForecast;
 
+    // Remove existing "Know More" button for yearly if any
+    const existingYearlyBtn = document.getElementById('know-more-yearly-btn');
+    if (existingYearlyBtn) existingYearlyBtn.remove();
+
+    // Create "Know More" button for Yearly
+    const knowMoreYearlyBtn = document.createElement('a');
+    knowMoreYearlyBtn.id = 'know-more-yearly-btn';
+    knowMoreYearlyBtn.href = `yearly-horoscope-details.html?sign=${sign.name}`;
+    knowMoreYearlyBtn.className = 'know-more-btn';
+    knowMoreYearlyBtn.textContent = 'Read Full 2026 Forecast';
+
+    // Append after yearly text
+    modalYearlyText.parentNode.insertBefore(knowMoreYearlyBtn, modalYearlyText.nextSibling);
+
     // Populate Keywords
     modalKeywords.innerHTML = '';
     if (sign.keywords && Array.isArray(sign.keywords)) {
@@ -125,6 +153,8 @@ function openModal(sign) {
     switchTab('forecast');
 
     modal.classList.remove('hidden');
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
     setTimeout(() => {
         modal.classList.add('active');
     }, 10);
@@ -152,6 +182,8 @@ function switchTab(tabName) {
 
 function closeModal() {
     modal.classList.remove('active');
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
     setTimeout(() => {
         modal.classList.add('hidden');
     }, 300); // Match transition duration
