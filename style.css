@@ -688,6 +688,8 @@ body.modal-open {
     /* Modal Responsive Fixes */
     .modal-content {
         padding: 1rem;
+        /* Extra padding at bottom to clear floating buttons */
+        padding-bottom: 150px;
         width: 95%;
         max-width: 95vw;
         max-height: 90vh;
