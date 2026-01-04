@@ -49,10 +49,41 @@ document.addEventListener('DOMContentLoaded', async () => {
         const signData = characteristicsData[signIndex];
         // The key inside signData corresponds to "{SignName} Common Characteristics"
         const contentKey = Object.keys(signData)[0];
-        const contentHtml = signData[contentKey];
+        const fullContent = signData[contentKey];
 
         titleElement.textContent = `${signName} Personality Profile`;
-        textElement.innerHTML = contentHtml; // The JSON contains HTML tags like <p>
+
+        const genderTabs = document.getElementById('gender-tabs');
+        const splitContent = fullContent.split('||SPLIT||');
+
+        if (splitContent.length === 2) {
+            const maleContent = splitContent[0];
+            const femaleContent = splitContent[1];
+
+            // Default to male
+            textElement.innerHTML = maleContent;
+            genderTabs.classList.remove('hidden');
+
+            const tabBtns = genderTabs.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const tab = btn.getAttribute('data-tab');
+                    if (tab === 'male') {
+                        textElement.innerHTML = maleContent;
+                    } else {
+                        textElement.innerHTML = femaleContent;
+                    }
+                });
+            });
+
+        } else {
+            // Fallback if data format isn't as expected
+            textElement.innerHTML = fullContent;
+            genderTabs.classList.add('hidden');
+        }
 
         loadingDiv.classList.add('hidden');
         contentDiv.classList.remove('hidden');

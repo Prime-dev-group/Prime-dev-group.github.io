@@ -1088,3 +1088,14 @@ body.modal-open {
         right: 2rem;
     }
 }
+
+/* Gender Tabs (Reusing Modal Tabs style structure) */
+.gender-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+}
