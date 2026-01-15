@@ -145,6 +145,101 @@ body {
     box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
 }
 
+/* Fix for Find Sign Button */
+#find-sign-btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-gold));
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+
+#find-sign-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(157, 78, 221, 0.4);
+}
+
+/* Accordion Styles (Theme Compatible) */
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    margin-bottom: 0.4rem;
+    padding: 0.8rem 1rem;
+
+    /* Dynamic Theme Styles */
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+
+    font-family: var(--font-heading, "Cinzel", serif);
+    /* Keep font if it fits, or fallback */
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.collapsible-header:hover {
+    border-color: var(--accent-gold);
+    background: var(--card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-icon {
+    font-size: 0.9rem;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    color: var(--text-secondary);
+}
+
+/* Active State */
+.collapsible.active .collapsible-header {
+    background: rgba(157, 78, 221, 0.15);
+    /* Subtle purple tint compliant with themes */
+    border-color: var(--accent-purple);
+    color: var(--accent-gold);
+    margin-bottom: 0;
+    border-radius: 12px 12px 0 0;
+}
+
+.collapsible.active .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--accent-purple);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.5s ease, padding 0.5s ease;
+    opacity: 0;
+
+    /* Content Background */
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 1rem;
+}
+
+.collapsible.active .collapsible-content {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 1.5rem;
+}
+
 .zodiac-icon {
     font-size: 3rem;
     margin-bottom: 0.5rem;
@@ -167,7 +262,118 @@ body {
     color: var(--text-secondary);
 }
 
-/* Love Compatibility Calculator Link Card */
+/* Insight Card Styles (New Layout) */
+.insight-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.insight-card:hover {
+    border-color: var(--accent-gold);
+    background: var(--card-hover);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+    background: rgba(255, 215, 0, 0.1);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.card-preview {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    transition: all 0.3s;
+}
+
+.preview-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.read-more:hover {
+    transform: translateX(3px);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Content Area */
+.card-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Active State */
+.insight-card.active .card-preview {
+    display: none;
+}
+
+.insight-card.active .card-content {
+    max-height: 1000px;
+    /* Large enough */
+    opacity: 1;
+    padding: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.insight-card.active .card-header {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.insight-card.active .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--accent-gold);
+}
+
 .calculator-link-card {
     margin: 3rem auto;
     max-width: 600px;
@@ -791,11 +997,145 @@ body.modal-open {
         line-height: 1.6;
     }
 
+
     /* Close button */
     .close-btn {
         font-size: 2rem;
         top: 0.5rem;
         right: 0.5rem;
+    }
+
+    /* --- Traits Grid --- */
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .trait-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+    }
+
+
+    .trait-key {
+        color: var(--accent-gold);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.2rem;
+    }
+
+    .trait-value {
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    /* --- Zodiac Traits List (Custom Aligned) --- */
+    .zodiac-traits-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        /* Reset margin completely */
+        text-align: left;
+        width: 100%;
+        /* Take full width */
+    }
+
+    .zodiac-traits-list li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+        font-size: 1rem;
+        /* Base font size */
+    }
+
+    .trait-label {
+        color: var(--accent-gold);
+        font-weight: 700;
+        margin-right: 5px;
+    }
+
+    .trait-content {
+        color: var(--text-primary);
+    }
+
+    /* --- Finder Modal --- */
+    .finder-content {
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .finder-content h3 {
+        margin-bottom: 1rem;
+        color: var(--accent-gold);
+        font-family: 'Cinzel', serif;
+    }
+
+    .finder-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .date-input {
+        padding: 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        font-family: inherit;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .date-input::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+    }
+
+    .finder-note {
+        font-size: 0.8rem;
+        opacity: 0.7;
+        margin-top: 1rem;
+    }
+
+    .cta-button {
+        margin-top: 1.5rem;
+        padding: 0.7rem 1.5rem;
+        background: linear-gradient(135deg, var(--accent-gold), #ff8c00);
+        color: var(--bg-color);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        font-size: 1rem;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    }
+
+    .action-btn {
+        padding: 0.8rem 1.5rem;
+        background: var(--accent-gold);
+        color: var(--bg-color);
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .action-btn:hover {
+        background: #ffecb3;
     }
 
     /* Love Calculator Link Card Responsive */
@@ -813,6 +1153,10 @@ body.modal-open {
     }
 
     .calculator-link-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .zodiac-traits-list li {
         font-size: 0.9rem;
     }
 }
@@ -1079,7 +1423,7 @@ body.modal-open {
 
     .modal-content {
         max-width: 800px;
-        padding: 4rem;
+        padding: 2.5rem;
     }
 
     .close-btn {
@@ -1087,6 +1431,25 @@ body.modal-open {
         top: 2rem;
         right: 2rem;
     }
+}
+
+/* --- HTML Data List Styling --- */
+.list_style {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left;
+}
+
+.list_style li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* Ensure bold tags in list are gold */
+.list_style li strong {
+    color: var(--accent-gold);
 }
 
 /* Gender Tabs (Reusing Modal Tabs style structure) */
@@ -1098,4 +1461,107 @@ body.modal-open {
     border-bottom: 1px solid var(--glass-border);
     padding-bottom: 1rem;
     flex-wrap: wrap;
+}
+
+/* Tag Pill Style for Strengths/Weaknesses */
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag-pill {
+    background: rgba(157, 78, 221, 0.2);
+    /* Low opacity purple */
+    border: 1px solid var(--accent-purple);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tag-pill:hover {
+    background: rgba(157, 78, 221, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(157, 78, 221, 0.2);
+}
+
+/* Refined Finder Modal UI */
+/* Refined Finder Modal UI */
+.finder-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    align-items: center;
+}
+
+#birth-date-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--accent-purple);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* Ensure icon visibility */
+    color-scheme: dark;
+}
+
+/* Force light color scheme for input on light theme */
+body.theme-solar #birth-date-input {
+    color-scheme: light;
+    background: rgba(255, 255, 255, 0.8);
+    border-color: var(--accent-purple);
+    color: var(--text-primary);
+}
+
+#birth-date-input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.3);
+}
+
+/* Calendar icon tweaks */
+#birth-date-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    /* Invert filter handled by color-scheme property usually, 
+       but explicit overrides can help */
+}
+
+#birth-date-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+
+#calculate-sign-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.8rem 0;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-gold));
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#calculate-sign-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
 }

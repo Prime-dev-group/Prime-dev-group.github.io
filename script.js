@@ -178,6 +178,10 @@ function switchTab(tabName) {
             content.classList.remove('active');
         }
     });
+
+    // Reset Scroll
+    const modalBody = document.querySelector('.modal-body');
+    if (modalBody) modalBody.scrollTop = 0;
 }
 
 function closeModal() {

@@ -95,6 +95,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         modalContent.textContent = content;
         modalIcon.textContent = icon;
         modal.classList.remove('hidden');
+
+        // Reset Scroll
+        const modalBody = modal.querySelector('.modal-body');
+        if (modalBody) modalBody.scrollTop = 0;
+
         // Small delay to allow display:flex to apply before opacity transition if needed, 
         // utilizing requestAnimationFrame for smoother transition
         requestAnimationFrame(() => {

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Horoscope - Astromage</title>
+    <meta name="description"
+        content="Detailed Chinese horoscope predictions and personality traits for your animal sign.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <h1 class="title">Chinese Horoscope</h1>
+            <p class="subtitle">Discover your animal sign destiny</p>
+            <button id="find-sign-btn" class="cta-button">Find Your Sign &rarr;</button>
+        </header>
+
+        <section class="calculator-container glass-panel">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <div id="loading" class="loading">Loading horoscope data...</div>
+
+            <div id="chinese-zodiac-grid" class="zodiac-grid hidden">
+                <!-- Tiles will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- Finder Modal -->
+        <div id="finder-modal" class="modal hidden">
+            <div class="modal-content glass-panel finder-content">
+                <button class="close-btn finder-close">&times;</button>
+                <h3>Find Your Chinese Zodiac Sign</h3>
+                <p>Enter your date of birth to discover your sign.</p>
+
+                <div class="finder-input-group">
+                    <input type="date" id="birth-date-input" class="date-input">
+                    <button id="calculate-sign-btn" class="action-btn">Reveal Destiny</button>
+                </div>
+                <p class="finder-note">We calculate based on the exact Lunar New Year dates.</p>
+            </div>
+        </div>
+
+        <!-- Detail Modal -->
+        <div id="details-modal" class="modal hidden">
+            <div class="modal-content glass-panel">
+                <button class="close-btn" aria-label="Close">&times;</button>
+                <div class="modal-header">
+                    <div class="sign-icon" id="modal-icon"></div>
+                    <h2 id="modal-sign-name"></h2>
+                    <p class="date-range" id="modal-years"></p>
+                </div>
+
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="personality">Personality</button>
+                    <button class="tab-btn" data-tab="life">Life & Career</button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Overview Tab -->
+                    <!-- Overview Tab -->
+                    <div id="tab-overview" class="tab-content active">
+
+                        <!-- Year & Element Card -->
+                        <div class="insight-card" id="card-year">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Calendar Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                    </span>
+                                    <h4>Year & Element</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-year" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-year-text" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Zodiac Traits Card -->
+                        <div class="insight-card" id="card-traits-grid">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Compass Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76">
+                                            </polygon>
+                                        </svg>
+                                    </span>
+                                    <h4>Chinese Zodiac Traits</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-zodiac-traits" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <div id="modal-zodiac-traits"></div>
+                            </div>
+                        </div>
+
+                        <!-- Famous People Card -->
+                        <div class="insight-card" id="card-famous">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Star Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                            </polygon>
+                                        </svg>
+                                    </span>
+                                    <h4>Famous People</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-famous" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-famous-people" class="yearly-text"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personality Tab -->
+                    <!-- Personality Tab -->
+                    <div id="tab-personality" class="tab-content">
+
+                        <!-- Traits Card -->
+                        <div class="insight-card" id="card-persona-traits">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- User Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </span>
+                                    <h4>Traits</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-traits" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-traits" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Strengths Card -->
+                        <div class="insight-card" id="card-strengths">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Trending Up Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                            <polyline points="17 6 23 6 23 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <h4>Strengths</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-strengths" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-strengths" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Weaknesses Card -->
+                        <div class="insight-card" id="card-weaknesses">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Alert Circle Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                    </span>
+                                    <h4>Weaknesses</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-weaknesses" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-weaknesses" class="yearly-text"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Life & Career Tab -->
+                    <div id="tab-life" class="tab-content">
+
+                        <!-- Career Card -->
+                        <div class="insight-card" id="card-career">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Briefcase Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                        </svg>
+                                    </span>
+                                    <h4>Career</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-career" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-career" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Education Card -->
+                        <div class="insight-card" id="card-education">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Graduation Cap Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                        </svg>
+                                    </span>
+                                    <h4>Education</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-education" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-education" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Love Card -->
+                        <div class="insight-card" id="card-love">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Heart Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <h4>Love</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-love" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-love" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Family Card -->
+                        <div class="insight-card" id="card-family">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Users Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                    </span>
+                                    <h4>Family</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-family" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-family" class="yearly-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Compatibility Card -->
+                        <div class="insight-card" id="card-compatibility">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Link Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71">
+                                            </path>
+                                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <h4>Compatibility</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-compatibility" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-compatibility" class="yearly-text"></p>
+                            </div>
+                        </div>
+                        <!-- Wealth Card -->
+                        <div class="insight-card" id="card-wealth">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Dollar Sign Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                        </svg>
+                                    </span>
+                                    <h4>Wealth</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-wealth" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-wealth" class="yearly-text"></p>
+                            </div>
+                        </div>
+                        <!-- Health Card -->
+                        <div class="insight-card" id="card-health">
+                            <div class="card-header">
+                                <div class="header-left">
+                                    <span class="card-icon">
+                                        <!-- Activity Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <h4>Health</h4>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="card-preview">
+                                <p id="preview-health" class="preview-text">Loading insights...</p>
+                                <span class="read-more">Read full insight ></span>
+                            </div>
+                            <div class="card-content">
+                                <p id="modal-health" class="yearly-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="chinese_horoscope_data_js.js"></script>
+    <script src="chinese-horoscope.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+    <!-- Reusing script.js for particles might be risky if it has specific logic, but likely fine for generic init -->
+    <script>
+        // Initialize particles explicitly if script.js doesn't auto-run or to ensure config
+        if (window.particlesJS) {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 80 },
+                    "color": { "value": "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                    "move": { "enable": true, "speed": 1 }
+                },
+                "interactivity": {
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
