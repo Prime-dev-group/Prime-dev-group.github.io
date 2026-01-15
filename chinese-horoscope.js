@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
     const grid = document.getElementById('chinese-zodiac-grid');
     constloading = document.getElementById('loading');
     const modal = document.getElementById('details-modal');
