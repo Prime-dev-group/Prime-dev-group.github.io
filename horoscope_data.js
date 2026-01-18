@@ -1,4 +1,4 @@
-[
+const HOROSCOPE_DATA =[
   {
     "name": "Aries",
     "date": "Mar 21 - Apr 19",
