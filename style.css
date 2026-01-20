@@ -428,15 +428,15 @@ body {
 
 /* Share Buttons */
 .share-container {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--glass-border);
 }
 
 .share-title {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     text-align: center;
 }
 
@@ -611,6 +611,8 @@ body.modal-open {
     /* Enable scrolling */
     padding-right: 10px;
     /* Space for scrollbar */
+    flex: 1;
+    /* Consume available space */
 
     /* Scrollbar Styling */
     scrollbar-width: thin;
@@ -1567,4 +1569,81 @@ body.theme-solar #birth-date-input {
 #calculate-sign-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+}
+
+.share-btn.generic:hover {
+    border-color: var(--accent-gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Mobile Responsiveness for Zodiac Grid */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .zodiac-card {
+        padding: 1rem 0.25rem;
+    }
+
+    .zodiac-icon {
+        font-size: 2rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .zodiac-name {
+        font-size: 0.85rem;
+    }
+
+    .zodiac-date {
+        font-size: 0.7rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+.scroll-indicator .arrow {
+    font-size: 1.5rem;
+    /* Slightly smaller */
+    margin-bottom: -2px;
+    /* Tighten spacing */
+}
+
+.scroll-indicator .text {
+    font-size: 0.7rem;
+    /* Smaller text */
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+/* Further compact share section on mobile */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1.5rem;
+        padding-bottom: 6rem;
+        /* Safe area for settings button */
+    }
+
+    .share-container {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .share-title {
+        margin-bottom: 0.3rem;
+        font-size: 0.8rem;
+    }
+
+    .share-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
 }
