@@ -269,13 +269,11 @@ function initParticles() {
  * Initialize share buttons
  */
 function initShareButtons() {
-    const shareTwitter = document.getElementById('share-twitter');
-    const shareFacebook = document.getElementById('share-facebook');
+    const shareGeneric = document.getElementById('share-generic');
     const shareDownload = document.getElementById('share-download');
     const shareCopy = document.getElementById('share-copy');
 
-    shareTwitter?.addEventListener('click', () => handleShare('twitter'));
-    shareFacebook?.addEventListener('click', () => handleShare('facebook'));
+    shareGeneric?.addEventListener('click', () => handleShare('web'));
     shareDownload?.addEventListener('click', () => handleShare('download'));
     shareCopy?.addEventListener('click', () => handleShare('copy'));
 }
@@ -300,8 +298,7 @@ async function handleShare(method) {
 
     if (result.success) {
         const messages = {
-            twitter: 'Shared to Twitter!',
-            facebook: 'Shared to Facebook!',
+            web: 'Shared successfully!',
             download: 'Image downloaded!',
             copy: 'Copied to clipboard!'
         };

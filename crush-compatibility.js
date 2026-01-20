@@ -268,8 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Share button event listeners
-    document.getElementById('crush-share-twitter')?.addEventListener('click', () => handleCrushShare('twitter'));
-    document.getElementById('crush-share-facebook')?.addEventListener('click', () => handleCrushShare('facebook'));
+    document.getElementById('crush-share-generic')?.addEventListener('click', () => handleCrushShare('web'));
     document.getElementById('crush-share-download')?.addEventListener('click', () => handleCrushShare('download'));
     document.getElementById('crush-share-copy')?.addEventListener('click', () => handleCrushShare('copy'));
 
@@ -292,8 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (result.success) {
             const messages = {
-                twitter: 'Shared to Twitter!',
-                facebook: 'Shared to Facebook!',
+                web: 'Shared successfully!',
                 download: 'Image downloaded!',
                 copy: 'Copied to clipboard!'
             };
