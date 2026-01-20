@@ -288,7 +288,13 @@ async function shareContent(options) {
 
     const shareText = `${title}\n\n${textContent}\n\n📲 Download the app: ${APP_LINK}\n\n✨ Discover your cosmic guidance at Astromage!`;
 
-    // Try Web Share API first on mobile
+    // Try Native Android Share first
+    if (window.Android && window.Android.share) {
+        window.Android.share(title, shareText, APP_LINK);
+        return { success: true, method: 'android' };
+    }
+
+    // Try Web Share API next (mobile web)
     if (method === 'web') {
         const shared = await shareViaWebAPI({
             title,
