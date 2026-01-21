@@ -1,0 +1,107 @@
+/* Letter Grid */
+.selection-container {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.letter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    margin-top: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color, #fff);
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+    border-color: var(--primary-gold, #ffd700);
+}
+
+.letter-btn.active {
+    background: var(--primary-gold, #ffd700);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    border-color: var(--primary-gold, #ffd700);
+}
+
+/* Result Container */
+.result-container {
+    padding: 2rem;
+    padding-bottom: 6rem;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.result-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-gold, #ffd700);
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* CSS Logic moved to using global .insight-card styles from style.css */
+/* Minimal overrides if needed */
+
+.insight-card {
+    /* Ensure it works well in our grid */
+    height: fit-content;
+}
+
+@media (max-width: 600px) {
+    .letter-grid {
+        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+        gap: 8px;
+    }
+
+    .letter-btn {
+        font-size: 1rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

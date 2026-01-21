@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Horoscope 2026 - Astromage</title>
+    <meta name="description"
+        content="Detailed 2026 horoscope based on the first letter of your name. Career, love, finance, and health predictions.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="letter-horoscope.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <h1 class="title">Letter Horoscope 2026</h1>
+            <p class="subtitle">What does the first letter of your name say about 2026?</p>
+        </header>
+
+        <section class="glass-panel selection-container">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h3>Select the First Letter of Your Name</h3>
+            <div id="letter-grid" class="letter-grid">
+                <!-- Letters A-Z will be generated here -->
+            </div>
+        </section>
+
+        <section id="result-container" class="glass-panel result-container hidden">
+            <div class="result-header">
+                <h2 id="selected-letter-title">Horoscope for Letter A</h2>
+                <button id="close-result" class="close-btn">&times;</button>
+            </div>
+
+            <div id="cards-container" class="cards-grid">
+                <!-- Cards will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="letter_horoscope_data.js"></script>
+    <script src="theme.js"></script>
+    <script src="letter-horoscope.js"></script>
+    <script>
+        // Initialize particles
+        if (window.particlesJS) {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 80 },
+                    "color": { "value": "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                    "move": { "enable": true, "speed": 1 }
+                },
+                "interactivity": {
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
