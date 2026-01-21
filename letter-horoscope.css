@@ -1,3 +1,15 @@
+/* Glass Panel - copied from biorhythm.css for consistency */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease;
+}
+
 /* Letter Grid */
 .selection-container {
     text-align: center;
@@ -6,13 +18,16 @@
 }
 
 .letter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
     margin-top: 1.5rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 10px;
+    /* Safety padding */
 }
 
 .letter-btn {
@@ -21,14 +36,16 @@
     color: var(--text-color, #fff);
     font-family: 'Cinzel', serif;
     font-size: 1.2rem;
-    padding: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 8px;
-    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 auto;
 }
 
 .letter-btn:hover {
@@ -92,13 +109,23 @@
 }
 
 @media (max-width: 600px) {
+    .glass-panel {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .selection-container {
+        padding: 1rem;
+    }
+
     .letter-grid {
-        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
         gap: 8px;
     }
 
     .letter-btn {
         font-size: 1rem;
+        width: 40px;
+        height: 40px;
     }
 
     .cards-grid {
