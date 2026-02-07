@@ -34,12 +34,25 @@ function renderGrid() {
     gridContainer.innerHTML = '';
 
     // Check if data is loaded
-    if (typeof HOROSCOPE_DATA === 'undefined' || !HOROSCOPE_DATA) {
+    if (typeof ZODIAC_STATIC_DATA === 'undefined' || !ZODIAC_STATIC_DATA) {
         gridContainer.innerHTML = '<p style="color: white; text-align: center;">Error: Horoscope data not found.</p>';
         return;
     }
 
-    zodiacSigns = HOROSCOPE_DATA;
+    // Merge static and daily data
+    zodiacSigns = ZODIAC_STATIC_DATA.map(sign => {
+        let dailyPrediction = "";
+        if (typeof DAILY_HOROSCOPE_DATA !== 'undefined' && DAILY_HOROSCOPE_DATA) {
+            const dailyData = DAILY_HOROSCOPE_DATA.find(d => d.name === sign.name);
+            if (dailyData) {
+                dailyPrediction = dailyData.horoscope;
+            }
+        }
+        return {
+            ...sign,
+            horoscope: dailyPrediction || "Check back soon for today's forecast!"
+        };
+    });
 
     zodiacSigns.forEach(sign => {
         const card = document.createElement('div');
