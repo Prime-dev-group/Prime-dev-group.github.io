@@ -27,6 +27,16 @@
             <p class="subtitle">Unlock the secrets of the cosmos</p>
         </header>
 
+        <div class="mobile-lang-toggle-container">
+            <div class="mobile-lang-toggle">
+                <input type="radio" id="lang-en" name="horoscope-lang" value="en" checked>
+                <label for="lang-en">EN</label>
+                <input type="radio" id="lang-hi" name="horoscope-lang" value="hi">
+                <label for="lang-hi">हि</label>
+                <div class="slider-bg"></div>
+            </div>
+        </div>
+
         <section class="zodiac-grid" id="zodiac-grid">
             <!-- Zodiac signs will be populated by JS -->
         </section>
@@ -184,7 +194,9 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="zodiac_static_data.js"></script>
+    <script src="zodiac_static_data_hindi.js"></script>
     <script src="daily_horoscope.js"></script>
+    <script src="daily_horoscope_hindi.js"></script>
     <script src="share-utils.js"></script>
     <script src="theme.js"></script>
     <script src="script.js"></script>

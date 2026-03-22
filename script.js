@@ -5,6 +5,7 @@
 
 // --- Zodiac Data ---
 let zodiacSigns = [];
+let currentLanguage = localStorage.getItem('astromage_lang') || 'en';
 
 // --- DOM Elements ---
 const gridContainer = document.getElementById('zodiac-grid');
@@ -33,17 +34,20 @@ const modalYearlyText = document.getElementById('modal-yearly-text');
 function renderGrid() {
     gridContainer.innerHTML = '';
 
+    const staticDB = currentLanguage === 'hi' ? ZODIAC_STATIC_DATA_HI : ZODIAC_STATIC_DATA;
+    const dailyDB = currentLanguage === 'hi' ? DAILY_HOROSCOPE_DATA_HI : DAILY_HOROSCOPE_DATA;
+
     // Check if data is loaded
-    if (typeof ZODIAC_STATIC_DATA === 'undefined' || !ZODIAC_STATIC_DATA) {
+    if (typeof staticDB === 'undefined' || !staticDB) {
         gridContainer.innerHTML = '<p style="color: white; text-align: center;">Error: Horoscope data not found.</p>';
         return;
     }
 
     // Merge static and daily data
-    zodiacSigns = ZODIAC_STATIC_DATA.map(sign => {
+    zodiacSigns = staticDB.map(sign => {
         let dailyPrediction = "";
-        if (typeof DAILY_HOROSCOPE_DATA !== 'undefined' && DAILY_HOROSCOPE_DATA) {
-            const dailyData = DAILY_HOROSCOPE_DATA.find(d => d.name === sign.name);
+        if (typeof dailyDB !== 'undefined' && dailyDB) {
+            const dailyData = dailyDB.find(d => d.name === sign.name);
             if (dailyData) {
                 dailyPrediction = dailyData.horoscope;
             }
@@ -84,6 +88,13 @@ function openModal(sign) {
     modalPlanet.textContent = sign.ruling_planet || 'Unknown';
     modalTraits.textContent = sign.traits || 'No traits available.';
 
+    // Find the English sign name for URLs to ensure data lookups work across pages
+    let englishSignName = sign.name;
+    if (currentLanguage === 'hi' && typeof ZODIAC_STATIC_DATA !== 'undefined') {
+        const engSign = ZODIAC_STATIC_DATA.find(s => s.icon === sign.icon);
+        if (engSign) englishSignName = engSign.name;
+    }
+
     // Remove existing "Know More" button if any (to prevent duplicates on re-open)
     const existingBtn = document.getElementById('know-more-btn');
     if (existingBtn) existingBtn.remove();
@@ -91,9 +102,9 @@ function openModal(sign) {
     // Create "Know More" button
     const knowMoreBtn = document.createElement('a');
     knowMoreBtn.id = 'know-more-btn';
-    knowMoreBtn.href = `zodiac-characteristics.html?sign=${sign.name}`;
+    knowMoreBtn.href = `zodiac-characteristics.html?sign=${englishSignName}`;
     knowMoreBtn.className = 'know-more-btn';
-    knowMoreBtn.textContent = 'Know More';
+    knowMoreBtn.textContent = tr[currentLanguage].knowMore;
 
     // Append after traits
     modalTraits.parentNode.insertBefore(knowMoreBtn, modalTraits.nextSibling);
@@ -144,9 +155,9 @@ function openModal(sign) {
     // Create "Know More" button for Yearly
     const knowMoreYearlyBtn = document.createElement('a');
     knowMoreYearlyBtn.id = 'know-more-yearly-btn';
-    knowMoreYearlyBtn.href = `yearly-horoscope-details.html?sign=${sign.name}`;
+    knowMoreYearlyBtn.href = `yearly-horoscope-details.html?sign=${englishSignName}`;
     knowMoreYearlyBtn.className = 'know-more-btn';
-    knowMoreYearlyBtn.textContent = 'Read Full 2026 Forecast';
+    knowMoreYearlyBtn.textContent = tr[currentLanguage].fullForecast;
 
     // Append after yearly text
     modalYearlyText.parentNode.insertBefore(knowMoreYearlyBtn, modalYearlyText.nextSibling);
@@ -221,8 +232,101 @@ tabBtns.forEach(btn => {
     });
 });
 
+// --- Language UI Translations ---
+const tr = {
+    en: {
+        forecast: "Daily Horoscope",
+        profile: "Personality Profile",
+        yearly: "Yearly Forecast 2026",
+        element: "Element",
+        ruler: "Ruling Planet",
+        strengths: "Strengths",
+        weaknesses: "Weaknesses",
+        compatibility: "Love Compatibility",
+        knowMore: "Know More",
+        fullForecast: "Read Full 2026 Forecast",
+        shareTitle: "Share your horoscope",
+        share: "📤 Share",
+        download: "📥 Download",
+        copy: "📋 Copy"
+    },
+    hi: {
+        forecast: "दैनिक राशिफल",
+        profile: "व्यक्तित्व विवरण",
+        yearly: "वार्षिक भविष्यफल 2026",
+        element: "तत्व",
+        ruler: "स्वामी ग्रह",
+        strengths: "खूबियाँ",
+        weaknesses: "कमज़ोरियाँ",
+        compatibility: "प्रेम संगतता",
+        knowMore: "और जानें",
+        fullForecast: "पूरा 2026 राशिफल पढ़ें",
+        shareTitle: "अपना राशिफल शेयर करें",
+        share: "📤 शेयर करें",
+        download: "📥 डाउनलोड करें",
+        copy: "📋 कॉपी करें"
+    }
+};
+
+function updateUIText(lang) {
+    const t = tr[lang];
+    // tabs
+    const tabForecast = document.querySelector('.tab-btn[data-tab="forecast"]');
+    if (tabForecast) tabForecast.textContent = t.forecast;
+    const tabProfile = document.querySelector('.tab-btn[data-tab="profile"]');
+    if (tabProfile) tabProfile.textContent = t.profile;
+    const tabYearly = document.querySelector('.tab-btn[data-tab="yearly"]');
+    if (tabYearly) tabYearly.textContent = t.yearly;
+    
+    // meta labels
+    const metaLabels = document.querySelectorAll('.meta-label');
+    if(metaLabels.length >= 2) {
+        metaLabels[0].textContent = t.element;
+        metaLabels[1].textContent = t.ruler;
+    }
+    
+    // headings in profile
+    const profileSections = document.querySelectorAll('.profile-section h4');
+    if(profileSections.length >= 3) {
+        profileSections[0].textContent = t.strengths;
+        profileSections[1].textContent = t.weaknesses;
+        profileSections[2].textContent = t.compatibility;
+    }
+    
+    // share container
+    const shareTitle = document.querySelector('.share-title');
+    if(shareTitle) shareTitle.textContent = t.shareTitle;
+    const shareGeneric = document.getElementById('share-generic');
+    if(shareGeneric) shareGeneric.textContent = t.share;
+    const shareDownload = document.getElementById('share-download');
+    if(shareDownload) shareDownload.textContent = t.download;
+    const shareCopy = document.getElementById('share-copy');
+    if(shareCopy) shareCopy.textContent = t.copy;
+    
+    // dynamically created buttons in modal
+    const knowMoreBtn = document.getElementById('know-more-btn');
+    if(knowMoreBtn) knowMoreBtn.textContent = t.knowMore;
+    const knowMoreYearlyBtn = document.getElementById('know-more-yearly-btn');
+    if(knowMoreYearlyBtn) knowMoreYearlyBtn.textContent = t.fullForecast;
+}
+
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
+    // Set checked state of radio buttons
+    const langInput = document.getElementById(`lang-${currentLanguage}`);
+    if(langInput) langInput.checked = true;
+
+    // Attach listeners to language toggle
+    document.querySelectorAll('input[name="horoscope-lang"]').forEach(input => {
+        input.addEventListener('change', (e) => {
+            currentLanguage = e.target.value;
+            localStorage.setItem('astromage_lang', currentLanguage);
+            updateUIText(currentLanguage);
+            renderGrid();
+        });
+    });
+
+    updateUIText(currentLanguage);
     renderGrid();
     initParticles();
     initShareButtons();

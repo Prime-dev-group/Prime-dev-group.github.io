@@ -113,6 +113,76 @@ body {
     letter-spacing: 1px;
 }
 
+/* Mobile-Optimized Language Switcher */
+.mobile-lang-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 100;
+}
+
+.mobile-lang-toggle {
+    position: relative;
+    display: flex;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 4px;
+    width: 100px;
+    height: 44px; /* Native touch target size */
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-lang-toggle input[type="radio"] {
+    display: none;
+}
+
+.mobile-lang-toggle label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    z-index: 2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin: 0;
+}
+
+.mobile-lang-toggle .slider-bg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: var(--accent-gold);
+    border-radius: 20px;
+    z-index: 1;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.mobile-lang-toggle input[id="lang-hi"]:checked ~ .slider-bg {
+    transform: translateX(100%);
+}
+
+.mobile-lang-toggle input[id="lang-en"]:checked ~ label[for="lang-en"],
+.mobile-lang-toggle input[id="lang-hi"]:checked ~ label[for="lang-hi"] {
+    color: #1a0b2e; /* dark text for high contrast on gold */
+}
+
+/* Make sure it drops behind modal */
+.modal-open .mobile-lang-toggle {
+    z-index: 10;
+}
+
 /* Zodiac Grid */
 .zodiac-grid {
     display: grid;
@@ -324,6 +394,7 @@ body {
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
