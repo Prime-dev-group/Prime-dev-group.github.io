@@ -7,3 +7,9 @@ scripts/
 # Python files
 *.py
 __pycache__/
+
+# Generated horoscope images
+generated_horoscope_images/
+
+# Horoscope data file
+simplified_horoscope_data.js
