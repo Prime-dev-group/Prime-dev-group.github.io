@@ -46,8 +46,17 @@ function renderGrid() {
     // Merge static and daily data
     zodiacSigns = staticDB.map(sign => {
         let dailyPrediction = "";
+        let searchName = sign.name;
+        
+        // The daily_horoscope_hindi.js file uses English sign names as keys.
+        // If in Hindi mode, find the English sign name using the icon.
+        if (currentLanguage === 'hi' && typeof ZODIAC_STATIC_DATA !== 'undefined') {
+            const engSign = ZODIAC_STATIC_DATA.find(s => s.icon === sign.icon);
+            if (engSign) searchName = engSign.name;
+        }
+
         if (typeof dailyDB !== 'undefined' && dailyDB) {
-            const dailyData = dailyDB.find(d => d.name === sign.name);
+            const dailyData = dailyDB.find(d => d.name === searchName);
             if (dailyData) {
                 dailyPrediction = dailyData.horoscope;
             }
